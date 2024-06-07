@@ -18,4 +18,4 @@ Grokking the coding interview:
 
 **Pattern Fast Slow Pointers**
 
-1. LinkedList Cycle (easy) >
+1. LinkedList Cycle (easy) > I
