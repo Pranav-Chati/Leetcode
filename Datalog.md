@@ -2,6 +2,18 @@
 
 Contains date and what problems were solved
 
+### Thursday, June 6th
+
+- Pattern Sliding Window:
+  - intro, max sum subarray, and smallest subarray
+  - longest substring with K distinct characters
+- Two pointer:
+
+  - intro / pair with sum, remove duplicates
+  - squaring a sorted array
+
+- Pattern Fast Slow Pointers:
+  - Introduction (or LL Cycle)
 
 ---
 
