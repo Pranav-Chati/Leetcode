@@ -2,6 +2,10 @@
 
 Contains date and what problems were solved
 
+### Friday, June 7th
+
+- I worked on all of the below - triplet sum close to target, fruit to basket, and start of LL
+
 ### Thursday, June 6th
 
 - Pattern Sliding Window:
