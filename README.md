@@ -6,27 +6,27 @@ Nothing crazy, I just wanted a repository to track my various progress but didn'
 
 **Pattern Sliding Window:**
 
-1. Introduction > IIIIII
-2. Maximum Sum Subarray of Size K (easy) > IIIIII
-3. Smallest Subarray with a given sum (easy) > IIIII
-4. Longest Substring with K Distinct Characters > IIII
-5. Fruits into Basket > III
-6. No-repeat Substring > I
+1. Introduction > IIIIIII
+2. Maximum Sum Subarray of Size K (easy) > IIIIIII
+3. Smallest Subarray with a given sum (easy) > IIIIII
+4. Longest Substring with K Distinct Characters > IIIII
+5. Fruits into Basket > IIII
+6. No-repeat Substring > II
 
 ---
 
 **Pattern Two Pointers:**
 
-1. Intro/Pair with Target Sum (easy) > IIIII
-2. Remove Duplicates (easy) > IIII
-3. Squaring a sorted array(easy) > III
-4. Triplet Sum to Zero(Medium) > II
+1. Intro/Pair with Target Sum (easy) > IIIIII
+2. Remove Duplicates (easy) > IIIII
+3. Squaring a sorted array(easy) > IIII
+4. Triplet Sum to Zero(Medium) > III
 
 ---
 
 **Pattern Fast Slow Pointers**
 
-1. LinkedList Cycle (easy) > III
-2. Start of LL Cycle(medium) > II
+1. LinkedList Cycle (easy) > IIII
+2. Start of LL Cycle(medium) > III
 
 ---
