@@ -2,6 +2,24 @@
 
 Contains date and what problems were solved
 
+### Wednesday, June 12th
+
+- Pattern Fast Slow Pointers:
+
+  - Review: Introduction (or LL Cycle), Start of LL
+  - Happy Numbers
+
+- Pattern sliding window:
+
+  - Review: intro, max sum subarray, and smallest subarray, longest substring with K distinct characters + fruits into basket, No-repeat substring
+
+- Two pointer:
+
+  - Review: intro / pair with sum, remove duplicates, squaring a sorted array, Triplet sum to zero
+  - Triplet sum close to target
+
+---
+
 ### Tuesday, June 11th
 
 - Pattern Fast Slow Pointers:

@@ -1,16 +1,16 @@
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 import java.util.TreeSet;
+import java.util.Set;
 
 public class PatternSlidingWindow {
-
     /*
-     * review: Introduction
+     * review: introduction
      * Given an array, find the average of all contiguous subarrays of size ‘K’ in
      * it.
      */
-    public static double[] avgContigSubarrays(int[] nums, int K) {
+    public static double[] avgSubarrays(int[] nums, int K) {
+
         int windowStart = 0;
         double windowSum = 0;
         double[] averages = new double[nums.length - K + 1];
@@ -34,7 +34,6 @@ public class PatternSlidingWindow {
      * maximum sum of any contiguous subarray of size ‘k’.
      */
     public static int maxSumSubarrayOfSizeK(int[] nums, int K) {
-
         int windowStart = 0;
         int windowSum = 0;
         int maxSum = 0;
@@ -58,23 +57,23 @@ public class PatternSlidingWindow {
      * of the smallest contiguous subarray whose sum is greater than or equal to
      * ‘S’. Return 0, if no such subarray exists.
      */
-
     public static int smallestSubarrayWithSum(int[] nums, int S) {
+
         int windowStart = 0;
         int windowSum = 0;
-        int minIndex = Integer.MAX_VALUE;
+        int minWindow = Integer.MAX_VALUE;
 
         for (int windowEnd = windowStart; windowEnd < nums.length; windowEnd++) {
             windowSum += nums[windowEnd];
 
             while (windowSum >= S) {
-                minIndex = Math.min(minIndex, windowEnd - windowStart + 1);
+                minWindow = Math.min(minWindow, windowEnd - windowStart + 1);
                 windowSum -= nums[windowStart];
                 windowStart++;
             }
         }
 
-        return minIndex == Integer.MAX_VALUE ? 0 : minIndex;
+        return minWindow == Integer.MAX_VALUE ? 0 : minWindow;
     }
 
     /*
@@ -84,28 +83,30 @@ public class PatternSlidingWindow {
      */
     public static int longestSubstringWithKDistinct(String word, int K) {
         int windowStart = 0;
-        int longestSubstring = 0;
         Map<Character, Integer> freqMap = new HashMap<>();
+        int maxSubstring = 0;
 
         for (int windowEnd = windowStart; windowEnd < word.length(); windowEnd++) {
             char current = word.charAt(windowEnd);
-            freqMap.put(current, freqMap.getOrDefault(freqMap, 0) + 1);
 
+            freqMap.put(current, freqMap.getOrDefault(current, 0) + 1);
             while (freqMap.size() > K) {
                 char remove = word.charAt(windowStart);
-                windowStart++;
                 freqMap.put(remove, freqMap.get(remove) - 1);
                 if (freqMap.get(remove) == 0)
                     freqMap.remove(remove);
+
+                windowStart++;
             }
-            longestSubstring = Math.max(longestSubstring, windowEnd - windowStart + 1);
+
+            maxSubstring = Math.max(maxSubstring, windowEnd - windowStart + 1);
         }
 
-        return longestSubstring;
+        return maxSubstring;
     }
 
     /*
-     * review: Fruits into Baskets
+     * review: Fruits into basket
      * Given an array of characters where each character represents a fruit tree,
      * you are given two baskets and your goal is to put maximum number of fruits in
      * each basket. The only restriction is that each basket can have only one type
@@ -114,25 +115,28 @@ public class PatternSlidingWindow {
      * You can start with any tree, but once you have started you can’t skip a tree.
      * You will pick one fruit from each tree until you cannot, i.e., you will stop
      * when you have to pick from a third fruit type.
+     * 
+     * Write a function to return the maximum number of fruits in both the baskets.
      */
-    public static int fruitsInBaskets(char[] fruits) {
+    public static int fruitsIntoBaskets(char[] word) {
         int windowStart = 0;
         int maxFruit = 0;
         Map<Character, Integer> freqMap = new HashMap<>();
 
-        for (int windowEnd = windowStart; windowEnd < fruits.length; windowEnd++) {
-            char current = fruits[windowEnd];
+        for (int windowEnd = windowStart; windowEnd < word.length; windowEnd++) {
+            char current = word[windowEnd];
             freqMap.put(current, freqMap.getOrDefault(current, 0) + 1);
 
             while (freqMap.size() > 2) {
-                char remove = fruits[windowStart];
-                windowStart++;
-
+                char remove = word[windowStart];
                 freqMap.put(remove, freqMap.get(remove) - 1);
 
                 if (freqMap.get(remove) == 0)
                     freqMap.remove(remove);
+
+                windowStart++;
             }
+
             maxFruit = Math.max(maxFruit, windowEnd - windowStart + 1);
         }
 
@@ -140,26 +144,26 @@ public class PatternSlidingWindow {
     }
 
     /*
-     * review: No-repeat substring
+     * Review: No-repeat Substring
      * Given a string, find the length of the longest substring which has no
      * repeating characters.
      */
     public static int noRepeatSubstring(String word) {
         int windowStart = 0;
-        int longestLength = 0;
-        Set<Character> uniqueLetters = new TreeSet<>();
+        int longestSubstring = 0;
+        Set<Character> letters = new TreeSet<>();
 
         for (int windowEnd = windowStart; windowEnd < word.length(); windowEnd++) {
             char current = word.charAt(windowEnd);
 
-            if (uniqueLetters.contains(current)) {
+            if (letters.contains(current)) {
                 windowStart = windowEnd;
-                uniqueLetters = new TreeSet<>();
+                letters = new TreeSet<>();
             }
-            uniqueLetters.add(current);
-            longestLength = Math.max(longestLength, windowEnd - windowStart + 1);
+            letters.add(current);
+            longestSubstring = Math.max(longestSubstring, windowEnd - windowStart + 1);
         }
 
-        return longestLength;
+        return longestSubstring;
     }
 }
