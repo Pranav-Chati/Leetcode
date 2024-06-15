@@ -8,6 +8,7 @@ problems = {
         "4. Longest Substring with K Distinct Characters",
         "5. Fruits into basket",
         "6. no-repeat substring",
+        "7. Longest Substring with Same Letters after Replacement",
     ],
     "Two Pointers": [
         "1. pair with target sum",
@@ -15,12 +16,14 @@ problems = {
         "3. Squaring a sorted array",
         "4. Triplet sum to zero",
         "5. triplet sum close to target",
+        "6. Triplets with Smaller Sum",
     ],
     "Fast Slow Pointers": [
         "1. LinkedList Cycle",
         "2. Start of LL Cycle",
         "3. Happy Number",
         "4. Middle of LL",
+        "5. Problem Challenge - Palindrome LL",
     ],
 }
 
