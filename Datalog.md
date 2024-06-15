@@ -2,6 +2,33 @@
 
 Contains date and what problems were solved
 
+### Saturday, June 15th
+
+Review:
+
+1. Start of LL Cycle (Category: Fast Slow Pointers)
+2. Middle of LL (Category: Fast Slow Pointers)
+3. no-repeat substring (Category: Pattern Sliding Window)
+4. Remove Duplicates (Category: Two Pointers)
+5. triplet sum close to target (Category: Two Pointers)
+6. Introduction (Category: Pattern Sliding Window)
+7. LinkedList Cycle (Category: Fast Slow Pointers)
+8. Squaring a sorted array (Category: Two Pointers)
+9. Triplet sum to zero (Category: Two Pointers)
+10. Maximum Sum Subarray of Size K (Category: Pattern Sliding Window)
+11. Longest Substring with K Distinct Characters (Category: Pattern Sliding Window)
+12. pair with target sum (Category: Two Pointers)
+13. Fruits into basket (Category: Pattern Sliding Window)
+14. Smallest Subarray with given sum (Category: Pattern Sliding Window)
+15. Happy Number (Category: Fast Slow Pointers)
+
+Problem:
+- Longest Substring with Same Letters after Replacement (Category: SlidingWindow)
+- Triplets with Smaller Sum (Category: Two Pointers)
+- Problem Challenge 1 (Category: FastSlowPointers)
+
+---
+
 ### Thursday, June 13th
 
 Review:
