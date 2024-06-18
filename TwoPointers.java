@@ -11,7 +11,7 @@ public class TwoPointers {
      * Write a function to return the indices of the two numbers (i.e. the pair)
      * such that they add up to the given target.
      */
-    public static int[] pairWithTargetSum(int[] nums, int target) {
+    public static int[] twoPointers(int[] nums, int target) {
         int left = 0;
         int right = nums.length - 1;
 
@@ -32,20 +32,18 @@ public class TwoPointers {
 
     /*
      * review: Remove Duplicates
-     * Given an array of sorted numbers, remove all duplicates from it. You should
-     * not use any extra space; after removing the duplicates in-place return the
-     * new length of the array.
      */
     public static int removeDuplicates(int[] nums) {
-        int nonDuplicates = 1;
+        int nonRemoveDup = 1;
+
         for (int i = 0; i < nums.length; i++) {
-            if (nums[nonDuplicates - 1] != nums[i]) {
-                nums[nonDuplicates] = nums[i];
-                nonDuplicates++;
+            if (nums[nonRemoveDup - 1] != nums[i]) {
+                nums[nonRemoveDup] = nums[i];
+                nonRemoveDup++;
             }
         }
 
-        return nonDuplicates;
+        return nonRemoveDup;
     }
 
     /*
@@ -53,7 +51,7 @@ public class TwoPointers {
      * Given a sorted array, create a new array containing squares of all the number
      * of the input array in the sorted order.
      */
-    public static int[] squaringSortedArray(int[] nums) {
+    public static int[] squaringASortedArray(int[] nums) {
         int[] squares = new int[nums.length];
         int index = nums.length - 1;
 
@@ -61,7 +59,7 @@ public class TwoPointers {
         int right = nums.length - 1;
 
         while (left <= right) {
-            int leftSqr = nums[left] * nums[left];
+            int leftSqr = nums[left] + nums[right];
             int rightSqr = nums[right] * nums[right];
 
             if (leftSqr > rightSqr) {
@@ -84,27 +82,26 @@ public class TwoPointers {
     public static List<List<Integer>> tripletSumToZero(int[] nums) {
         List<List<Integer>> triplets = new ArrayList<>();
 
-        // Sort the array
         Arrays.sort(nums);
 
-        for (int i = 0; i < nums.length; i++) {
+        for (int i = 0; i < nums.length - 2; i++) {
             if (i > 0 && nums[i] == nums[i - 1])
                 continue;
 
-            findPairs(nums, -nums[i], i + 1, triplets);
+            searchForPairs(nums, -nums[i], i + 1, triplets);
         }
 
         return triplets;
     }
 
-    public static void findPairs(int[] nums, int target, int left, List<List<Integer>> triplets) {
+    public static void searchForPairs(int[] nums, int targetSum, int left, List<List<Integer>> triplets) {
         int right = nums.length - 1;
 
         while (left < right) {
             int sum = nums[left] + nums[right];
 
-            if (sum == target) {
-                triplets.add(Arrays.asList(-target, nums[left], nums[right]));
+            if (sum == targetSum) {
+                triplets.add(Arrays.asList(-targetSum, nums[left], nums[right]));
                 left++;
                 right--;
 
@@ -113,12 +110,10 @@ public class TwoPointers {
 
                 while (left < right && nums[right] == nums[right + 1])
                     right--;
-
-            } else if (sum > target) {
-                right--;
-            } else {
+            } else if (sum > targetSum)
                 left++;
-            }
+            else
+                right--;
         }
     }
 
@@ -130,10 +125,10 @@ public class TwoPointers {
      * the triplet with the smallest sum.
      */
     public static int tripletSumCloseToTarget(int[] nums, int target) {
-
-        int smallestDiff = 0;
         // Sort the array
         Arrays.sort(nums);
+
+        int smallestDiff = 0;
 
         for (int i = 0; i < nums.length - 2; i++) {
             int left = i + 1;
@@ -145,38 +140,30 @@ public class TwoPointers {
                 if (diff == 0)
                     return target;
 
-                if (Math.abs(diff) < Math.abs(smallestDiff)) {
+                if (Math.abs(diff) < Math.abs(smallestDiff))
                     smallestDiff = diff;
-                }
 
-                if (diff > 0) {
+                if (diff > 0)
                     left++;
-                } else {
+                else
                     right--;
-                }
             }
         }
 
-        return smallestDiff;
+        return target - smallestDiff;
     }
 
     /*
-     * Problem: Triplets with Smaller Sum
-     * Given an array arr of unsorted numbers and a target sum, count all
-     * triplets in it such that arr[i] + arr[j] + arr[k] < target where i, j, and k
-     * are three different indices. Write a function to return the count of such
-     * triplets.
+     * review: Triplets with Smaller Sum
+     * Given an array arr of unsorted numbers and a target sum, count all triplets
+     * in it such that arr[i] + arr[j] + arr[k] < target where i, j, and k are three
+     * different indices. Write a function to return the count of such triplets.
      */
     public static int tripletsWithSmallerSum(int[] nums, int target) {
-        int triplets = 0;
-
+        int tripletsWithSmallerSum = 0;
         Arrays.sort(nums);
 
         for (int i = 0; i < nums.length - 2; i++) {
-            if (nums[i] >= target) {
-                break;
-            }
-
             int left = i + 1;
             int right = nums.length - 1;
 
@@ -184,20 +171,15 @@ public class TwoPointers {
                 int sum = nums[i] + nums[left] + nums[right];
 
                 if (sum < target) {
-                    triplets += right - left;
+                    tripletsWithSmallerSum += right - left;
                     left++;
                 } else {
                     right--;
                 }
-
             }
         }
-        return triplets;
+
+        return tripletsWithSmallerSum;
     }
 
-    public static void main(String[] args) {
-        System.out.println(tripletsWithSmallerSum(new int[] { -1, 0, 2, 3 }, 3));
-
-        System.out.println(tripletsWithSmallerSum(new int[] { -1, 4, 2, 1, 3 }, 5));
-    }
 }

@@ -1,22 +1,20 @@
 public class FastSlowPointers {
-
     /*
      * review: LinkedList Cycle
      * Given the head of a Singly LinkedList, write a function to determine if the
      * LinkedList has a cycle in it or not.
      */
-    public static boolean linkedlistCycle(ListNode head) {
+    public static boolean llCycle(ListNode head) {
         ListNode fast = head;
         ListNode slow = head;
 
         while (fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;
-
-            if (fast == slow)
+            if (slow == fast)
                 return true;
         }
-
+        
         return false;
     }
 
@@ -26,32 +24,29 @@ public class FastSlowPointers {
      * to find the starting node of the cycle.
      */
     public static ListNode startOfLLCycle(ListNode head) {
-        ListNode fast = head;
-        ListNode slow = head;
+        // find the ll cycle & cycle Length
         int cycleLength = 0;
+        ListNode slow = head;
+        ListNode fast = head;
 
         while (fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;
-
             if (fast == slow) {
-                cycleLength = calculateLength(slow);
+                cycleLength = calculateCycleLength(slow);
                 break;
             }
         }
 
-        slow = head;
+        // reduce cycle length
         fast = head;
-
-        // move the fast pointer ahead by cycleLength
+        slow = head;
         while (cycleLength > 0) {
             fast = fast.next;
             cycleLength--;
         }
 
-        // move each node until they are equal
-
-        while (fast != slow) {
+        while (slow != fast) {
             fast = fast.next;
             slow = slow.next;
         }
@@ -59,13 +54,12 @@ public class FastSlowPointers {
         return slow;
     }
 
-    public static int calculateLength(ListNode slow) {
+    public static int calculateCycleLength(ListNode slow) {
         int length = 1;
         ListNode current = slow.next;
-
         while (current != slow) {
-            current = current.next;
             length++;
+            current = current.next;
         }
 
         return length;
@@ -76,23 +70,23 @@ public class FastSlowPointers {
      * Any number will be called a happy number if, after repeatedly replacing it
      * with a number equal to the sum of the square of all of its digits, leads us
      * to number ‘1’. All other (not-happy) numbers will never reach ‘1’. Instead,
-     * they will be stuck in a cycle of numbers which does not include ‘1’.
+     * they will be stuck in a cycle of numbers which does not include ‘1’
      */
     public static boolean happyNumber(int num) {
         int fast = num;
         int slow = num;
 
         do {
-            slow = findHN(slow);
-            fast = findHN(findHN(fast));
+            slow = calculateHN(slow);
+            fast = calculateHN(calculateHN(fast));
+
         } while (slow != fast);
 
         return slow == 1;
     }
 
-    public static int findHN(int num) {
+    public static int calculateHN(int num) {
         int sum = 0;
-
         while (num != 0) {
             int digit = num % 10;
             sum += digit * digit;
@@ -103,11 +97,6 @@ public class FastSlowPointers {
 
     /*
      * review: Middle of the Linked List
-     * Given the head of a Singly LinkedList, write a method to return the middle
-     * node of the LinkedList.
-     * 
-     * If the total number of nodes in the LinkedList is even, return the second
-     * middle node.
      */
     public static ListNode middleOfLL(ListNode head) {
         ListNode fast = head;
@@ -122,7 +111,7 @@ public class FastSlowPointers {
     }
 
     /*
-     * problem: Palindrome LinkedList
+     * review: Palindrome LinkedList
      * Given the head of a Singly LinkedList, write a method to check if the
      * LinkedList is a palindrome or not.
      * 
@@ -130,38 +119,31 @@ public class FastSlowPointers {
      * in the original form once the algorithm is finished. The algorithm should
      * have O(N) time complexity where ‘N’ is the number of nodes in the LinkedList.
      */
+
     public static boolean palindromeLL(ListNode head) {
+        // find the middle of the cycle
+        ListNode middleOfLL = middleOfLL(head);
+
+        // reverse second half
+        ListNode headOfSecondHalf = reverse(middleOfLL);
+        // ! do we need a copy of this value??
+
+        ListNode pointer1 = head;
+        ListNode pointer2 = headOfSecondHalf;
         boolean isPalindrome = true;
-        // find middle
-        ListNode fast = head;
-        ListNode slow = head;
 
-        while (fast != null && fast.next != null) {
-            fast = fast.next.next;
-            slow = slow.next;
-        }
-
-        // reverse middle
-        ListNode headOfReverseList = reverse(slow);
-        ListNode secondHalfOfList = headOfReverseList;
-
-        slow = head;
-
-        // compare
-        while (slow != null && secondHalfOfList != null) {
-            if (slow != secondHalfOfList) {
+        // compare reversed with initial values
+        while (pointer1 != null && pointer2 != null) {
+            if (pointer1.value != pointer2.value) {
                 isPalindrome = false;
                 break;
             }
-
-            slow = slow.next;
-            secondHalfOfList = secondHalfOfList.next;
+            pointer1 = pointer1.next;
+            pointer2 = pointer2.next;
         }
 
-        // reverse back
-        reverse(headOfReverseList);
+        reverse(headOfSecondHalf);
 
-        // final checks and retunrn
         return isPalindrome;
     }
 
@@ -175,6 +157,14 @@ public class FastSlowPointers {
             head = next;
         }
 
-        return prev;
+        return head;
     }
+
+    public static void main(String[] args) {
+        // 2 -> 4 -> 6 -> 4 -> 2 -> 2 -> null
+        // 2 -> 4 -> 6 -> 4 -> 2 -> null
+
+        // TODO: Test above function
+    }
+
 }

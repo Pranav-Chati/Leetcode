@@ -7,16 +7,15 @@ public class PatternSlidingWindow {
     /*
      * review: Introduction
      * Given an array, find the average of all contiguous subarrays of size ‘K’ in
-     * it.
+     * it
      */
-    public static double[] contiguousSubarrays(int[] nums, int K) {
-        int windowStart = 0;
-        double windowSum = 0;
+    public static double[] contigSubarrays(int[] nums, int K) {
         double[] averages = new double[nums.length - K + 1];
+        double windowSum = 0;
+        int windowStart = 0;
 
         for (int windowEnd = windowStart; windowEnd < nums.length; windowEnd++) {
-            windowSum += nums[windowEnd];
-
+            windowSum += nums[windowStart];
             if (windowEnd >= K - 1) {
                 averages[windowStart] = windowSum / K;
                 windowSum -= nums[windowStart];
@@ -32,7 +31,7 @@ public class PatternSlidingWindow {
      * Given an array of positive numbers and a positive number ‘k’, find the
      * maximum sum of any contiguous subarray of size ‘k’.
      */
-    public static int maxSumSubarraySizeK(int[] nums, int k) {
+    public static int maxSumSubarrayOfSizeK(int[] nums, int K) {
         int windowStart = 0;
         int windowSum = 0;
         int maxSum = 0;
@@ -40,14 +39,14 @@ public class PatternSlidingWindow {
         for (int windowEnd = windowStart; windowEnd < nums.length; windowEnd++) {
             windowSum += nums[windowEnd];
 
-            if (windowEnd >= k - 1) {
-                maxSum = Math.max(maxSum, windowSum);
+            if (windowEnd >= K - 1) {
+                maxSum = Math.max(windowSum, maxSum);
                 windowSum -= nums[windowStart];
                 windowStart++;
             }
         }
 
-        return maxSum;
+        return windowSum;
     }
 
     /*
@@ -56,20 +55,21 @@ public class PatternSlidingWindow {
      * of the smallest contiguous subarray whose sum is greater than or equal to
      * ‘S’. Return 0, if no such subarray exists.
      */
-    public static int smallestSubarrayWithSum(int[] nums, int target) {
+    public static int smallestSubarrayWithAGivenSum(int[] nums, int S) {
         int windowStart = 0;
         int windowSum = 0;
-        int minWindow = Integer.MAX_VALUE;
+        int minIndex = 0;
 
         for (int windowEnd = windowStart; windowEnd < nums.length; windowEnd++) {
             windowSum += nums[windowEnd];
-            while (windowSum >= target) {
-                minWindow = Math.min(minWindow, windowEnd - windowStart + 1);
+            while (windowSum >= S) {
+                minIndex = Math.min(minIndex, windowEnd - windowStart + 1);
                 windowSum -= nums[windowStart];
                 windowStart++;
             }
         }
-        return minWindow == Integer.MAX_VALUE ? 0 : minWindow;
+
+        return minIndex;
     }
 
     /*
@@ -80,16 +80,18 @@ public class PatternSlidingWindow {
     public static int longestSubstringWithKDistinctCharacters(String word, int K) {
         int windowStart = 0;
         Map<Character, Integer> freqMap = new HashMap<>();
-        int maxLength = 0;
+        int maxLength = Integer.MAX_VALUE;
 
         for (int windowEnd = windowStart; windowEnd < word.length(); windowEnd++) {
             char current = word.charAt(windowEnd);
             freqMap.put(current, freqMap.getOrDefault(current, 0) + 1);
+
             while (freqMap.size() > K) {
-                char remove = word.charAt(windowStart);
+                char remove = word.charAt(word.charAt(windowStart));
                 freqMap.put(remove, freqMap.get(remove) - 1);
+
                 if (freqMap.get(remove) == 0)
-                    freqMap.get(remove);
+                    freqMap.remove(remove);
 
                 windowStart++;
             }
@@ -97,7 +99,7 @@ public class PatternSlidingWindow {
             maxLength = Math.max(maxLength, windowEnd - windowStart + 1);
         }
 
-        return maxLength;
+        return maxLength == Integer.MAX_VALUE ? 0 : maxLength;
     }
 
     /*
@@ -114,28 +116,27 @@ public class PatternSlidingWindow {
      * Write a function to return the maximum number of fruits in both the baskets.
      */
     public static int fruitsIntoBasket(char[] fruits) {
-        int windowStart = 0;
         Map<Character, Integer> freqMap = new HashMap<>();
-        int maxFruits = 0;
+        int maxFruit = 0;
+        int windowStart = 0;
 
         for (int windowEnd = windowStart; windowEnd < fruits.length; windowEnd++) {
             char current = fruits[windowEnd];
-
-            freqMap.put(current, freqMap.getOrDefault(freqMap, 0) + 1);
+            freqMap.put(current, freqMap.getOrDefault(current, 0) + 1);
 
             while (freqMap.size() > 2) {
                 char remove = fruits[windowStart];
                 freqMap.put(remove, freqMap.get(remove) - 1);
-
                 if (freqMap.get(remove) == 0)
                     freqMap.remove(remove);
 
                 windowStart++;
             }
-            maxFruits = Math.max(maxFruits, windowEnd - windowStart + 1);
+
+            maxFruit = Math.max(maxFruit, windowEnd - windowStart + 1);
         }
 
-        return maxFruits;
+        return maxFruit;
     }
 
     /*
@@ -145,61 +146,50 @@ public class PatternSlidingWindow {
      */
     public static int noRepeatSubstring(String word) {
         int windowStart = 0;
-        Set<Character> letters = new TreeSet<>();
-        int maxLength = 0;
+        Set<Character> noDups = new TreeSet<>();
+        int longestLength = 0;
 
         for (int windowEnd = windowStart; windowEnd < word.length(); windowEnd++) {
             char current = word.charAt(windowEnd);
 
-            if (letters.contains(current)) {
+            if (noDups.contains(current)) {
                 windowStart = windowEnd;
-                letters.clear();
+                noDups.clear();
             }
-
-            letters.add(current);
-            maxLength = Math.max(maxLength, windowEnd - windowStart + 1);
+            noDups.add(current);
+            longestLength = Math.max(longestLength, windowEnd - windowStart + 1);
         }
 
-        return maxLength;
+        return longestLength;
     }
 
     /*
-     * Problem: Longest Substring with Same Letters after Replacement
+     * review: Longest Substring with Same Letters after Replacement
      * Given a string with lowercase letters only, if you are allowed to replace no
      * more than ‘k’ letters with any letter, find the length of the longest
      * substring having the same letters after replacement.
      */
-    public static int longestSubstringwSameLetters(String word, int K) {
+    public static int longestSubstringWithSameLettersAfterReplacement(String word, int K) {
         int windowStart = 0;
-        int maxRepeatLetter = 0;
-        int maxLength = 0;
+        int maxRepeatLetters = 0;
         Map<Character, Integer> freqMap = new HashMap<>();
+        int longestLength = 0;
 
         for (int windowEnd = windowStart; windowEnd < word.length(); windowEnd++) {
             char current = word.charAt(windowEnd);
             freqMap.put(current, freqMap.getOrDefault(current, 0) + 1);
-            maxRepeatLetter = Math.max(maxRepeatLetter, freqMap.get(current));
+            maxRepeatLetters = Math.max(maxRepeatLetters, freqMap.get(current));
 
-            if (windowEnd - windowStart + 1 - maxRepeatLetter > K) {
+            while (windowEnd - windowStart + 1 - maxRepeatLetters > K) {
                 char remove = word.charAt(windowStart);
+                windowStart++;
                 freqMap.put(remove, freqMap.get(remove) - 1);
                 if (freqMap.get(remove) == 0)
                     freqMap.remove(remove);
-
-                windowStart++;
             }
 
-            maxLength = Math.max(maxLength, windowEnd - windowStart + 1);
+            longestLength = Math.max(longestLength, windowEnd - windowStart + 1);
         }
-
-        return maxLength;
-    }
-
-    public static void main(String[] args) {
-        String str = "abbcb";
-        int k = 1;
-        System.out.println(longestSubstringwSameLetters(str, k));
-        System.out.println(longestSubstringwSameLetters("aabccbb", 2));
-
+        return longestLength;
     }
 }
