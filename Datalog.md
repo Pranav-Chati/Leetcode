@@ -2,6 +2,36 @@
 
 Contains date and what problems were solved
 
+### Tuesday, June 18th
+
+Review:
+
+1. Start of LL Cycle (Category: Fast Slow Pointers)
+2. pair with target sum (Category: Two Pointers)
+3. triplet sum close to target (Category: Two Pointers)
+4. Fruits into basket (Category: Pattern Sliding Window)
+5. Problem Challenge - Palindrome LL (Category: Fast Slow Pointers)
+6. Triplets with Smaller Sum (Category: Two Pointers)
+7. Smallest Subarray with given sum (Category: Pattern Sliding Window)
+8. Introduction (Category: Pattern Sliding Window)
+9. Happy Number (Category: Fast Slow Pointers)
+10. LinkedList Cycle (Category: Fast Slow Pointers)
+11. Maximum Sum Subarray of Size K (Category: Pattern Sliding Window)
+12. Middle of LL (Category: Fast Slow Pointers)
+13. no-repeat substring (Category: Pattern Sliding Window)
+14. Squaring a sorted array (Category: Two Pointers)
+15. Longest Substring with Same Letters after Replacement (Category: Pattern Sliding Window)
+16. Triplet sum to zero (Category: Two Pointers)
+17. Longest Substring with K Distinct Characters (Category: Pattern Sliding Window)
+18. Remove Duplicates (Category: Two Pointers)
+
+- Take some time to look deeper into the LL algorithms (mathematically)
+- Take some time to under some of the two pointer algos as well
+
+Problem:
+
+---
+
 ### Monday, June 17th
 
 Review:
