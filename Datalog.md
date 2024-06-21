@@ -2,6 +2,15 @@
 
 Contains date and what problems were solved
 
+### Wednesday, June 19th
+
+Problem:
+
+- Problem Challenge 2 (Category: FastSlowPointers)
+- Dutch National Problem (Category: TwoPointers)
+
+---
+
 ### Tuesday, June 18th
 
 Review:
@@ -27,8 +36,6 @@ Review:
 
 - Take some time to look deeper into the LL algorithms (mathematically)
 - Take some time to under some of the two pointer algos as well
-
-Problem:
 
 ---
 

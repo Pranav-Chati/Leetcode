@@ -168,4 +168,48 @@ public class TwoPointers {
 
         return tripletsWithSmallerSum;
     }
+
+    /*
+     * problem: Dutch national problem
+     */
+    public static int[] dutchNationalProblem(int[] nums) {
+
+        int low = 0;
+        int high = nums.length - 1;
+        int i = 0;
+
+        while (low <= i && i <= high) { // ! Why does <= high make a huge difference??
+
+            if (nums[i] == 2) {
+                int temp = nums[high];
+                nums[high] = nums[i];
+                nums[i] = temp;
+                high--;
+            } else if (nums[i] == 0) {
+                int temp = nums[low];
+                nums[low] = nums[i];
+                nums[i] = temp;
+                i++;
+                low++;
+            } else {
+                i++; // ! we accounted for 1 here, what bigger difference does that make???
+            }
+        }
+
+        return nums;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = { 1, 0, 2, 1, 0 };
+        int[] nums2 = { 2, 2, 0, 1, 2, 0 };
+
+        System.out.println(Arrays.toString(nums));
+        nums = dutchNationalProblem(nums);
+        System.out.println(Arrays.toString(nums));
+
+        System.out.println(Arrays.toString(nums2));
+        nums = dutchNationalProblem(nums2);
+        System.out.println(Arrays.toString(nums2));
+
+    }
 }

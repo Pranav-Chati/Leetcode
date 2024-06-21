@@ -143,10 +143,125 @@ public class FastSlowPointers {
 
         while (head != null) {
             ListNode next = head.next;
+            head.next = prev;
             prev = head;
             head = next;
         }
 
         return prev;
+    }
+
+    /*
+     * review: Rearrange a LinkedList
+     * Given the head of a Singly LinkedList, write a method to modify the
+     * LinkedList such that the nodes from the second half of the LinkedList are
+     * inserted alternately to the nodes from the first half in reverse order. So if
+     * the LinkedList has nodes 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> null, your method
+     * should return 1 -> 6 -> 2 -> 5 -> 3 -> 4 -> null.
+     */
+    public static ListNode rearrangeOfLL(ListNode head) {
+        ListNode fast = head;
+        ListNode slow = head;
+
+        // find the middle
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+
+        // reverse the middle
+        ListNode reversedSecondList = reverseLL(slow.next);
+        slow.next = null;
+
+        // transform
+        ListNode pointer1 = head;
+        ListNode copyOfHead = head;
+
+        while (reversedSecondList != null) {
+            // insert
+            ListNode node = new ListNode(reversedSecondList.value);
+            node.next = pointer1.next;
+            pointer1.next = node;
+
+            // increment
+            reversedSecondList = reversedSecondList.next;
+            pointer1 = pointer1.next.next;
+        }
+
+        return copyOfHead;
+    }
+
+    public static ListNode reverseLL(ListNode head) {
+        ListNode prev = null;
+
+        while (head != null) {
+            ListNode next = head.next;
+            head.next = prev;
+            prev = head;
+            head = next;
+        }
+
+        return prev;
+    }
+
+    // 2 -> 4 -> 6 -> 8 -> 10 -> 12 -> null
+    public static void main(String[] args) {
+        ListNode head = list2();
+
+        // Print the linked list (just for demonstration)
+        printLinkedList(head);
+
+        head = rearrangeOfLL(head);
+
+        printLinkedList(head);
+    }
+
+    public static void printLinkedList(ListNode head) {
+        ListNode current = head;
+        while (current != null) {
+            System.out.print(current.value);
+            if (current.next != null) {
+                System.out.print(" -> ");
+            }
+            current = current.next;
+        }
+        System.out.println(" -> null");
+    }
+
+    public static ListNode list1() {
+        // Creating nodes
+        ListNode node1 = new ListNode(2);
+        ListNode node2 = new ListNode(4);
+        ListNode node3 = new ListNode(6);
+        ListNode node4 = new ListNode(8);
+        ListNode node5 = new ListNode(10);
+        ListNode node6 = new ListNode(12);
+
+        // Connecting nodes to form the linked list
+        node1.next = node2;
+        node2.next = node3;
+        node3.next = node4;
+        node4.next = node5;
+        node5.next = node6;
+
+        // Head of the linked list
+        return node1;
+    }
+
+    public static ListNode list2() {
+        // Creating nodes
+        ListNode node1 = new ListNode(2);
+        ListNode node2 = new ListNode(4);
+        ListNode node3 = new ListNode(6);
+        ListNode node4 = new ListNode(8);
+        ListNode node5 = new ListNode(10);
+
+        // Connecting nodes to form the linked list
+        node1.next = node2;
+        node2.next = node3;
+        node3.next = node4;
+        node4.next = node5;
+
+        return node1;
     }
 }

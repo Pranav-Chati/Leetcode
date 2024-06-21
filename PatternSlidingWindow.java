@@ -176,11 +176,10 @@ public class PatternSlidingWindow {
             freqMap.put(current, freqMap.getOrDefault(current, 0) + 1);
             maxRepeatLetters = Math.max(maxRepeatLetters, freqMap.get(current));
 
-            while (windowEnd - windowStart + 1 - maxRepeatLetters > K) {
+            while (windowEnd - windowStart + 1 - maxRepeatLetters > K) { // ! understand this to a better degree, why is
+                                                                         // it this and why the while?
                 char remove = word.charAt(windowStart);
                 freqMap.put(remove, freqMap.get(remove) - 1);
-                // maxRepeatLetters = Math.max(maxRepeatLetters, freqMap.get(remove));
-
                 windowStart++;
             }
 
@@ -188,5 +187,39 @@ public class PatternSlidingWindow {
         }
 
         return longestSubtring;
+    }
+
+    /*
+     * problem: Longest Subarray with Ones after Replacement
+     * Given an array containing 0s and 1s, if you are allowed to replace no more
+     * than ‘k’ 0s with 1s, find the length of the longest contiguous subarray
+     * having all 1s.
+     */
+    public static int longestSubarrayWithOnesAfterReplacement(int[] nums, int K) {
+        int windowStart = 0;
+        Map<Integer, Integer> freqMap = new HashMap<>();
+        int maxOnes = 0;
+        int len = 0;
+
+        for (int windowEnd = windowStart; windowEnd < nums.length; windowEnd++) {
+            int current = nums[windowEnd];
+            freqMap.put(current, freqMap.getOrDefault(current, 0) + 1);
+            maxOnes = Math.max(maxOnes, freqMap.get(current));
+
+            while (windowEnd - windowStart + 1 - maxOnes > K) { // ! understand this to a better degree, why is it this
+                                                                // and why the while?
+                int remove = nums[windowStart];
+                freqMap.put(remove, freqMap.get(remove) - 1);
+                windowStart++;
+            }
+            len = Math.max(len, windowEnd - windowStart + 1);
+        }
+        return maxOnes;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = { 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1 };
+
+        System.out.println(longestSubarrayWithOnesAfterReplacement(nums, 2));
     }
 }
