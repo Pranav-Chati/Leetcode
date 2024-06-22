@@ -17,6 +17,7 @@ problems = {
         "4. Triplet sum to zero",
         "5. triplet sum close to target",
         "6. Triplets with Smaller Sum",
+        "7. Dutch National Problem",
     ],
     "Fast Slow Pointers": [
         "1. LinkedList Cycle",
@@ -24,6 +25,10 @@ problems = {
         "3. Happy Number",
         "4. Middle of LL",
         "5. Problem Challenge - Palindrome LL",
+        "6. Problem Challenge - Rearrange a LL",
+    ],
+    "Merge Intervals": [
+        "1. Merged Intervals",
     ],
 }
 
