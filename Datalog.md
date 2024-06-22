@@ -2,6 +2,37 @@
 
 Contains date and what problems were solved
 
+### Friday, June 21st
+
+Review:
+
+1. no-repeat substring (Category: Pattern Sliding Window)
+2. Squaring a sorted array (Category: Two Pointers)
+3. pair with target sum (Category: Two Pointers)
+4. Introduction (Category: Pattern Sliding Window)
+5. Triplet sum to zero (Category: Two Pointers)
+6. Longest Substring with K Distinct Characters (Category: Pattern Sliding Window)
+7. Problem Challenge - Palindrome LL (Category: Fast Slow Pointers)
+8. Longest Substring with Same Letters after Replacement (Category: Pattern Sliding Window)
+9. LinkedList Cycle (Category: Fast Slow Pointers)
+10. Fruits into basket (Category: Pattern Sliding Window)
+11. Triplets with Smaller Sum (Category: Two Pointers)
+12. Middle of LL (Category: Fast Slow Pointers)
+13. triplet sum close to target (Category: Two Pointers)
+14. Smallest Subarray with given sum (Category: Pattern Sliding Window)
+15. Start of LL Cycle (Category: Fast Slow Pointers)
+16. Remove Duplicates (Category: Two Pointers)
+17. Maximum Sum Subarray of Size K (Category: Pattern Sliding Window)
+18. Happy Number (Category: Fast Slow Pointers)
+
+Problem:
+
+- Problem Challenge 2 (Category: FastSlowPointers)
+- Dutch National Problem (Category: TwoPointers)
+- Introduction (Category: Pattern Merge Intervals)
+
+---
+
 ### Wednesday, June 19th
 
 Problem:
