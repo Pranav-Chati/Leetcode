@@ -1,7 +1,7 @@
 import random
 
 problems = {
-    "Pattern Sliding Window": [
+    "Sliding Window": [
         "1. Introduction",
         "2. Maximum Sum Subarray of Size K",
         "3. Smallest Subarray with given sum",
@@ -9,6 +9,7 @@ problems = {
         "5. Fruits into basket",
         "6. no-repeat substring",
         "7. Longest Substring with Same Letters after Replacement",
+        "8. Longest Subarray with Ones after Replacement",
     ],
     "Two Pointers": [
         "1. pair with target sum",
@@ -29,6 +30,9 @@ problems = {
     ],
     "Merge Intervals": [
         "1. Merged Intervals",
+    ],
+    "Cyclic Sort": [
+        "1. Cyclic Sort",
     ],
 }
 
