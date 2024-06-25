@@ -16,12 +16,11 @@ public class TwoPointers {
         int right = nums.length - 1;
 
         while (left < right) {
-            int currentSum = nums[left] + nums[right];
-
-            if (target == currentSum)
+            int sum = nums[left] + nums[right];
+            if (target == sum)
                 return new int[] { left, right };
 
-            if (currentSum > target)
+            if (sum > target)
                 right--;
             else
                 left++;
@@ -32,44 +31,50 @@ public class TwoPointers {
 
     /*
      * review: Remove Duplicates
+     * Given an array of sorted numbers, remove all duplicates from it. You should
+     * not use any extra space; after removing the duplicates in-place return the
+     * new length of the array.
      */
     public static int removeDuplicates(int[] nums) {
-        int nonDuplicates = 1;
-        for (int i = nonDuplicates; i < nums.length; i++) {
-            if (nums[nonDuplicates - 1] != nums[i]) {
-                nums[nonDuplicates] = nums[i];
-                nonDuplicates++;
+        int nonRemoveDuplicates = 1;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[nonRemoveDuplicates - 1] != nums[i]) {
+                nums[nonRemoveDuplicates] = nums[i];
+                nonRemoveDuplicates++;
             }
         }
-        return nonDuplicates;
+        return nonRemoveDuplicates;
     }
 
     /*
      * review: Squaring a sorted array
-     * Given a sorted array, create a new array containing squares of all the number
-     * of the input array in the sorted order.
+     * Given an array of sorted numbers and a target sum, find a pair in the array
+     * whose sum is equal to the given target.
+     * 
+     * Write a function to return the indices of the two numbers (i.e. the pair)
+     * such that they add up to the given target.
      */
     public static int[] squaringASortedArray(int[] nums) {
+        int[] squares = new int[nums.length];
+        int index = nums.length - 1;
+
         int left = 0;
         int right = nums.length - 1;
-
-        int[] square = new int[nums.length];
-        int index = nums.length - 1;
 
         while (left <= right) {
             int leftSqr = nums[left] * nums[left];
             int rightSqr = nums[right] * nums[right];
 
             if (leftSqr > rightSqr) {
-                square[index--] = leftSqr;
+                squares[index--] = leftSqr;
                 left++;
             } else {
-                square[index--] = rightSqr;
+                squares[index--] = rightSqr;
                 right--;
             }
         }
 
-        return square;
+        return squares;
     }
 
     /*
@@ -78,41 +83,39 @@ public class TwoPointers {
      * up to zero.
      */
     public static List<List<Integer>> tripletSumToZero(int[] nums) {
-        List<List<Integer>> triplets = new ArrayList<>();
         Arrays.sort(nums);
+        List<List<Integer>> triplets = new ArrayList<>();
 
-        for (int i = 0; i < nums.length; i++) {
+        for (int i = 0; i < nums.length - 2; i++) {
             if (i > 0 && nums[i] == nums[i - 1])
                 continue;
 
-            searchPairs(nums, -nums[i], i + 1, triplets);
+            int left = i + 1;
+            int right = nums.length - 1;
+            int targetSum = -nums[i];
+
+            while (left < right) {
+                int sum = nums[left] + nums[right];
+
+                if (sum == targetSum) {
+                    triplets.add(Arrays.asList(nums[i], nums[left], nums[right]));
+
+                    left++;
+                    right--;
+
+                    while (left < right && nums[left] == nums[left - 1])
+                        left++;
+
+                    while (left < right && nums[right] == nums[right + 1])
+                        right--;
+                } else if (sum > targetSum) {
+                    right--;
+                } else
+                    left++;
+            }
         }
 
         return triplets;
-    }
-
-    public static void searchPairs(int[] nums, int targetSum, int left, List<List<Integer>> triplets) {
-        int right = nums.length - 1;
-
-        while (left < right) {
-            int currentSum = nums[left] + nums[right];
-
-            if (currentSum == targetSum) {
-                triplets.add(Arrays.asList(-targetSum, nums[left], nums[right]));
-
-                left++;
-                right--;
-
-                while (left < right && nums[left] == nums[left - 1])
-                    left++;
-
-                while (left < right && nums[right] == nums[right + 1])
-                    right--;
-            } else if (currentSum > targetSum)
-                right--;
-            else
-                left++;
-        }
     }
 
     /*
@@ -122,33 +125,32 @@ public class TwoPointers {
      * of the triplet. If there are more than one such triplet, return the sum of
      * the triplet with the smallest sum.
      */
-    public static int tripletSumCloseToTarget(int[] nums, int targetSum) {
-        int smallestDiff = 0;
+    public static int tripletSumCloseToTarget(int[] nums, int target) {
         Arrays.sort(nums);
+
+        int smallestDiff = 0;
 
         for (int i = 0; i < nums.length - 2; i++) {
             int left = i + 1;
             int right = nums.length - 1;
 
             while (left < right) {
-                int diff = targetSum - nums[i] - nums[left] - nums[right];
+                int diff = target - nums[i] - nums[left] - nums[right];
                 if (diff == 0)
-                    return targetSum;
+                    return target;
 
-                if (Math.abs(diff) < Math.abs(smallestDiff)) {
+                if (Math.abs(diff) < Math.abs(smallestDiff))
                     smallestDiff = diff;
-                }
 
                 if (diff > 0)
                     left++;
-
                 else
                     right--;
 
             }
         }
 
-        return smallestDiff;
+        return target - smallestDiff;
     }
 
     /*
@@ -159,15 +161,17 @@ public class TwoPointers {
      */
     public static int tripletsWithSmallerSum(int[] nums, int target) {
         Arrays.sort(nums);
+        int tripsWithSmallerSum = 0;
 
-        int count = 0;
         for (int i = 0; i < nums.length - 2; i++) {
             int left = i + 1;
             int right = nums.length - 1;
+
             while (left < right) {
-                int currentSum = nums[i] + nums[left] + nums[right];
-                if (currentSum < target) {
-                    count += right - left;
+                int sum = nums[i] + nums[left] + nums[right];
+
+                if (sum < target) {
+                    tripsWithSmallerSum += right - left;
                     left++;
                 } else {
                     right--;
@@ -175,30 +179,30 @@ public class TwoPointers {
             }
         }
 
-        return count;
+        return tripsWithSmallerSum;
     }
 
     /*
-     * problem: Dutch National Flag Problem
+     * review: Dutch National Flag Problem
      * Given an array containing 0s, 1s and 2s, sort the array in-place. You should
      * treat numbers of the array as objects, hence, we can’t count 0s, 1s, and 2s
      * to recreate the array.
      */
-    public static int[] dutchNationalProblem(int[] nums) {
+    public static int[] dutchNationalFlag(int[] nums) {
         int left = 0;
         int right = nums.length - 1;
         int i = 0;
-
         while (left <= i && i <= right) {
-            if (nums[i] == 0) {
+            if (nums[left] == 0) {
                 swap(nums, left, i);
-                left++;
                 i++;
-            } else if (nums[i] == 2) {
+                left++;
+            } else if (nums[left] == 2) {
                 swap(nums, right, i);
                 right--;
-            } else
+            } else {
                 i++;
+            }
         }
 
         return nums;
@@ -208,6 +212,6 @@ public class TwoPointers {
         int temp = nums[i];
         nums[i] = nums[toSwap];
         nums[toSwap] = temp;
-
     }
+
 }

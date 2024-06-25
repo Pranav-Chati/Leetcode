@@ -2,26 +2,31 @@ public class FastSlowPointers {
 
     /*
      * review: LinkedList Cycle
-     * Detect the cycle
+     * Given the head of a Singly LinkedList, write a function to determine if the
+     * LinkedList has a cycle in it or not.
      */
-    public static boolean linkedListCycle(ListNode head) {
-        ListNode slow = head;
+    public static boolean llCycle(ListNode head) {
         ListNode fast = head;
+        ListNode slow = head;
 
         while (fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;
 
-            if (slow == fast)
+            if (fast == slow)
                 return true;
         }
+
         return false;
     }
 
     /*
      * review: Start of LL Cycle
+     * Given the head of a Singly LinkedList that contains a cycle, write a function
+     * to find the starting node of the cycle.
      */
     public static ListNode startOfLL(ListNode head) {
+        // find the cycle length
         ListNode fast = head;
         ListNode slow = head;
         int cycleLength = 0;
@@ -30,34 +35,33 @@ public class FastSlowPointers {
             fast = fast.next.next;
             slow = slow.next;
 
-            if (fast == slow) {
+            if (slow == fast) {
                 cycleLength = calculateLength(slow);
                 break;
             }
         }
 
-        return findCycleStart(cycleLength, head);
+        return findCycleStartNode(head, cycleLength);
     }
 
-    public static int calculateLength(ListNode slow) {
-        int length = 1;
-        ListNode current = slow.next;
+    public static int calculateLength(ListNode head) {
+        int len = 1;
+        ListNode current = head.next;
 
-        while (current != slow) {
+        while (current != head) {
+            len++;
             current = current.next;
-            length++;
         }
-
-        return length;
+        return len;
     }
 
-    public static ListNode findCycleStart(int cycleLen, ListNode head) {
+    public static ListNode findCycleStartNode(ListNode head, int length) {
         ListNode pointer1 = head;
         ListNode pointer2 = head;
 
-        while (cycleLen > 0) {
-            cycleLen--;
-            pointer1 = pointer1.next;
+        while (length > 0) {
+            pointer2 = pointer2.next;
+            length--;
         }
 
         while (pointer1 != pointer2) {
@@ -71,20 +75,20 @@ public class FastSlowPointers {
     /*
      * review: Happy Number
      */
-    public static boolean happyNumber(int num) {
+    public static boolean isHappyNumber(int num) {
         int fast = num;
         int slow = num;
 
         do {
-            fast = findHN(findHN(fast));
-            slow = findHN(slow);
-        } while (fast != slow);
-
+            fast = findHappyNumber(findHappyNumber(fast));
+            slow = findHappyNumber(slow);
+        } while (slow != fast);
         return slow == 1;
     }
 
-    public static int findHN(int num) {
+    public static int findHappyNumber(int num) {
         int sum = 0;
+
         while (num > 0) {
             int digit = num % 10;
             sum += digit * digit;
@@ -115,79 +119,58 @@ public class FastSlowPointers {
      */
     public static boolean palindromeLL(ListNode head) {
         boolean isPalindrome = true;
-        // find the middle of the list
-        ListNode fast = head;
-        ListNode slow = head;
+        // get to the middle
+        ListNode middle = middleOfLL(head);
 
-        while (fast != null && fast.next != null) {
-            fast = fast.next.next;
-            slow = slow.next;
-        }
+        // reverse the middle
+        ListNode secondHalf = reverse(middle);
+        ListNode copySecondHalf = secondHalf;
+        ListNode pointer1 = head;
 
-        // reverse the second half
-        ListNode middleReversed = reverse(slow);
-        ListNode secondHalf = middleReversed;
-        ListNode firstHalf = head;
-
-        // iterate through them to see if they are same or not
-        while (firstHalf != null && secondHalf != null) {
-            if (firstHalf.value != secondHalf.value)
+        // then compare the values
+        while (copySecondHalf != null && pointer1 != null) {
+            if (pointer1.value != copySecondHalf.value) {
                 isPalindrome = false;
-
-            firstHalf = firstHalf.next;
-            secondHalf = secondHalf.next;
+                break;
+            }
+            pointer1 = pointer1.next;
+            copySecondHalf = copySecondHalf.next;
         }
 
-        // reverse it back
-        reverse(middleReversed);
+        // then reverse the
+        reverse(secondHalf);
 
         // return
         return isPalindrome;
     }
 
-    public static ListNode reverse(ListNode head) {
-        ListNode prev = null;
-        while (head != null) {
-            ListNode next = head.next;
-            head.next = prev;
-            prev = head;
-            head = next;
-        }
-
-        return prev;
-    }
-
     /*
-     * problem: Rearrange a LL
+     * review: Rearrange a LL
      * Given the head of a Singly LinkedList, write a method to modify the
      * LinkedList such that the nodes from the second half of the LinkedList are
-     * inserted alternately to the nodes from the first half in reverse order. So if
-     * the LinkedList has nodes 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> null, your method
-     * should return 1 -> 6 -> 2 -> 5 -> 3 -> 4 -> null.
+     * inserted alternately to the nodes from the first half in reverse order
      */
-    public static ListNode rearrangeALL(ListNode head) {
-        // find the middle
+    public static void rearrangeLL(ListNode head) {
+        // find the middle of the list
         ListNode middle = middleOfLL(head);
 
-        // then reverse the middle.next value
+        // reverse that part
         ListNode secondHalf = reverse(middle.next);
         middle.next = null;
 
-        // then integrate until the reversed set goes to zero
+        // then rearrange
         ListNode pointer1 = head;
         while (secondHalf != null) {
             ListNode node = new ListNode(secondHalf.value);
             node.next = pointer1.next;
             pointer1.next = node;
 
-            secondHalf = secondHalf.next;
             pointer1 = pointer1.next.next;
+            secondHalf = secondHalf.next;
         }
-
-        return head;
     }
 
-    public static ListNode reverseLL(ListNode head) {
+    public static ListNode reverse(ListNode head) {
         ListNode prev = null;
 
         while (head != null) {

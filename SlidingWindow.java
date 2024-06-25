@@ -3,13 +3,13 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class PatternSlidingWindow {
+public class SlidingWindow {
     /*
      * review: Introduction
      * Given an array, find the average of all contiguous subarrays of size ‘K’ in
      * it.
      */
-    public static double[] averageContiguousSubarrays(int[] nums, int K) {
+    public static double[] contiguousAverage(int[] nums, int K) {
         int windowStart = 0;
         double windowSum = 0;
         double[] averages = new double[nums.length - K + 1];
@@ -30,16 +30,15 @@ public class PatternSlidingWindow {
     /*
      * review: Maximum Sum Subarray of Size K
      */
-    public static int maxSumSubarrayOfSizeK(int[] nums, int K) {
+    public static int maxSumSubarrayOfSizeK(int[] nums, int k) {
         int windowStart = 0;
         int windowSum = 0;
         int maxSum = 0;
 
-        for (int windowEnd = windowStart; windowEnd < nums.length; windowEnd++) {
+        for (int windowEnd = 0; windowEnd < nums.length; windowEnd++) {
             windowSum += nums[windowEnd];
-
-            if (windowEnd >= K - 1) {
-                maxSum = Math.max(windowSum, maxSum);
+            if (windowEnd >= k - 1) {
+                maxSum = Math.max(maxSum, windowSum);
                 windowSum -= nums[windowStart];
                 windowStart++;
             }
@@ -54,21 +53,23 @@ public class PatternSlidingWindow {
      * of the smallest contiguous subarray whose sum is greater than or equal to
      * ‘S’. Return 0, if no such subarray exists.
      */
-    public static int smallestSubarrayWithGivenSum(int[] nums, int S) {
+    public static int smallestSubarrayWithAGivenSum(int[] nums, int S) {
         int windowStart = 0;
         int windowSum = 0;
-        int minLength = Integer.MAX_VALUE;
-        for (int windowEnd = windowStart; windowEnd < nums.length; windowEnd++) {
+
+        int minWindow = Integer.MAX_VALUE;
+
+        for (int windowEnd = 0; windowEnd < nums.length; windowEnd++) {
             windowSum += nums[windowEnd];
 
             while (windowSum >= S) {
-                minLength = Math.min(minLength, windowEnd - windowStart + 1);
+                minWindow = Math.min(minWindow, windowEnd - windowStart + 1);
                 windowSum -= nums[windowStart];
                 windowStart++;
             }
         }
 
-        return minLength == Integer.MAX_VALUE ? 0 : minLength;
+        return minWindow == Integer.MAX_VALUE ? 0 : minWindow;
     }
 
     /*
@@ -76,7 +77,7 @@ public class PatternSlidingWindow {
      * Given a string, find the length of the longest substring in it with no more
      * than K distinct characters.
      */
-    public static int longestSubstringWithKDistinctChar(String word, int K) {
+    public static int longestSubstringWithKDistinctCharacters(String word, int K) {
         int windowStart = 0;
         int longestSubstring = 0;
         Map<Character, Integer> freqMap = new HashMap<>();
@@ -87,10 +88,11 @@ public class PatternSlidingWindow {
 
             while (freqMap.size() > K) {
                 char remove = word.charAt(windowStart);
-
                 freqMap.put(remove, freqMap.get(remove) - 1);
+
                 if (freqMap.get(remove) == 0)
                     freqMap.remove(remove);
+
                 windowStart++;
             }
             longestSubstring = Math.max(longestSubstring, windowEnd - windowStart + 1);
@@ -109,22 +111,25 @@ public class PatternSlidingWindow {
      * You can start with any tree, but once you have started you can’t skip a tree.
      * You will pick one fruit from each tree until you cannot, i.e., you will stop
      * when you have to pick from a third fruit type.
+     * 
+     * Write a function to return the maximum number of fruits in both the baskets.
      */
     public static int fruitsIntoBasket(char[] fruits) {
-        int maxFruits = 0;
         int windowStart = 0;
+        int maxFruits = 0;
         Map<Character, Integer> freqMap = new HashMap<>();
 
-        for (int windowEnd = windowStart; windowEnd < fruits.length; windowEnd++) {
+        for (int windowEnd = 0; windowEnd < fruits.length; windowEnd++) {
             char current = fruits[windowEnd];
             freqMap.put(current, freqMap.getOrDefault(current, 0) + 1);
 
             while (freqMap.size() > 2) {
                 char remove = fruits[windowStart];
+                freqMap.put(remove, freqMap.get(remove) - 1);
 
-                freqMap.remove(remove, freqMap.get(remove) - 1);
                 if (freqMap.get(remove) == 0)
                     freqMap.remove(remove);
+
                 windowStart++;
             }
 
@@ -142,16 +147,15 @@ public class PatternSlidingWindow {
     public static int noRepeatSubstring(String word) {
         int windowStart = 0;
         int longestSubstring = 0;
-        Set<Character> noDups = new TreeSet<>();
+        Set<Character> noDuplicates = new TreeSet<>();
 
         for (int windowEnd = windowStart; windowEnd < word.length(); windowEnd++) {
             char current = word.charAt(windowEnd);
-
-            if (noDups.contains(current)) {
+            if (noDuplicates.contains(current)) {
                 windowStart = windowEnd;
-                noDups.clear();
+                noDuplicates.clear();
             }
-            noDups.add(current);
+            noDuplicates.add(current);
             longestSubstring = Math.max(longestSubstring, windowEnd - windowStart + 1);
         }
 
@@ -164,27 +168,80 @@ public class PatternSlidingWindow {
      * more than ‘k’ letters with any letter, find the length of the longest
      * substring having the same letters after replacement.
      */
-    public static int longestSubstringWithSameLettersAfterReplacement(String word, int K) {
-        int longestSubtring = 0;
+    public static int longestSubstringWithSameLettersAfterReplacement(String word, int k) {
         int windowStart = 0;
-        int maxReplacedLetters = 0;
         Map<Character, Integer> freqMap = new HashMap<>();
+        int maxRepeated = 0;
+        int longestSubstring = 0;
 
         for (int windowEnd = windowStart; windowEnd < word.length(); windowEnd++) {
             char current = word.charAt(windowEnd);
             freqMap.put(current, freqMap.getOrDefault(current, 0) + 1);
-            maxReplacedLetters = Math.max(maxReplacedLetters, freqMap.get(current));
-
-            if (windowEnd - windowStart + 1 - maxReplacedLetters > K) { // ! not while, but if
+            maxRepeated = Math.max(maxRepeated, freqMap.get(current));
+            if (windowEnd - windowStart + 1 - maxRepeated > k) {
                 char remove = word.charAt(windowStart);
                 freqMap.put(remove, freqMap.get(remove) - 1);
                 windowStart++;
             }
 
-            longestSubtring = Math.max(longestSubtring, windowEnd - windowStart + 1);
+            longestSubstring = Math.max(longestSubstring, windowEnd - windowStart + 1);
         }
 
-        return longestSubtring;
+        return longestSubstring;
     }
 
+    /*
+     * problem: Longest Subarray with Ones after Replacement
+     * Given an array containing 0s and 1s, if you are allowed to replace no more
+     * than ‘k’ 0s with 1s, find the length of the longest contiguous subarray
+     * having all 1s.
+     */
+    public static int longestSubarrayWithOnesAfterReplacement(int[] nums, int k) {
+        int windowStart = 0;
+        int maxOnes = 0;
+        Map<Integer, Integer> freqMap = new HashMap<>();
+
+        for (int windowEnd = 0; windowEnd < nums.length; windowEnd++) {
+            int current = nums[windowEnd];
+            freqMap.put(current, freqMap.getOrDefault(current, 0) + 1);
+
+            while (freqMap.get(0) > k) {
+                int remove = nums[windowStart];
+                freqMap.put(remove, freqMap.get(remove) - 1);
+                windowStart++;
+            }
+            maxOnes = Math.max(maxOnes, windowEnd - windowStart + 1);
+        }
+
+        return maxOnes;
+    }
+
+    public static int alternativeApproach(int[] nums, int k) {
+        int maxOnes = 0;
+        int maxLength = 0;
+        int windowStart = 0;
+
+        for (int windowEnd = 0; windowEnd < nums.length; windowEnd++) {
+            if (nums[windowEnd] == 1)
+                maxOnes++;
+
+            while (windowEnd - windowStart + 1 - maxOnes > k) {
+                if (nums[windowStart] == 1)
+                    maxOnes--;
+
+                windowStart++;
+            }
+
+            maxLength = Math.max(maxLength, windowEnd - windowStart + 1);
+        }
+
+        return maxLength;
+    }
+
+    public static void main(String[] args) {
+        int[] array = new int[] { 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1 };
+        int[] array1 = new int[] { 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1 };
+
+        System.out.println(longestSubarrayWithOnesAfterReplacement(array1, 3));
+    }
 }
