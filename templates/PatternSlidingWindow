@@ -26,5 +26,9 @@ public class PatternSlidingWindow {
      /*
       * review: Longest Substring with Same Letters after Replacement
       */
+
+    /*
+      * review: Longest Subarray with Ones after Replacement
+      */
 }
 
