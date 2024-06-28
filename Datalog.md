@@ -2,6 +2,58 @@
 
 Contains date and what problems were solved
 
+### Thursday, June 27th
+
+Solutions To Review:
+
+1. Merge Intervals (just studying)
+2. LL problem challenge 3
+
+---
+
+### Wednesday, June 26th
+
+Problems:
+
+1. LL problem challenge 3
+
+---
+
+### Tuesday, June 25th
+
+Review:
+
+1. Smallest Subarray with given sum (Category: Sliding Window)
+2. Merged Intervals (Category: Merge Intervals)
+3. Remove Duplicates (Category: Two Pointers)
+4. Longest Subarray with Ones after Replacement (Category: Sliding Window)
+5. Dutch National Problem (Category: Two Pointers)
+6. Problem Challenge - Rearrange a LL (Category: Fast Slow Pointers)
+7. Maximum Sum Subarray of Size K (Category: Sliding Window)
+8. Longest Substring with K Distinct Characters (Category: Sliding Window)
+9. Cyclic Sort (Category: Cyclic Sort)
+10. pair with target sum (Category: Two Pointers)
+11. Middle of LL (Category: Fast Slow Pointers)
+12. no-repeat substring (Category: Sliding Window)
+13. Squaring a sorted array (Category: Two Pointers)
+14. LinkedList Cycle (Category: Fast Slow Pointers)
+15. Start of LL Cycle (Category: Fast Slow Pointers)
+16. Longest Substring with Same Letters after Replacement (Category: Sliding Window)
+17. Introduction (Category: Sliding Window)
+18. Problem Challenge - Palindrome LL (Category: Fast Slow Pointers)
+19. Triplets with Smaller Sum (Category: Two Pointers)
+20. triplet sum close to target (Category: Two Pointers)
+21. Fruits into basket (Category: Sliding Window)
+22. Triplet sum to zero (Category: Two Pointers)
+23. Happy Number (Category: Fast Slow Pointers)
+
+Problem:
+
+1. Find the missing Number
+2. Problem challenge #2 - Comparing Strings containing Backspaces
+
+---
+
 ### Monday, June 24th
 
 Review:
