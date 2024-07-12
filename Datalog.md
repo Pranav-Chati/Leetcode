@@ -2,12 +2,66 @@
 
 Contains date and what problems were solved
 
+### Friday, July 12th
+
+Problems to prove / Questions?
+
+1. no-repeat substring (Category: Sliding Window)
+2. Dutch National Problem
+3. Longest Substring with Same Letters after Replacement (Category: Sliding Window)
+4. Start of LL Cycle (Category: Fast Slow Pointers)
+5. Find the missing number (Category: Cyclic Sort) - compare your solution to the actual solution
+6. What is cyclic sort? What does that mean exactly?
+
+Problem:
+
+1. Merge Intervals (Category: Merge Intervals)
+2. Find all Missing Numbers (Category: Cyclic Sort)
+
+### Thursday, July 11th
+
+Review:
+
+1. Squaring a sorted array (Category: Two Pointers)
+2. Triplets with Smaller Sum (Category: Two Pointers)
+3. Fruits into basket (Category: Sliding Window)
+4. triplet sum close to target (Category: Two Pointers)
+5. Remove Duplicates (Category: Two Pointers)
+6. Problem Challenge - Rearrange a LL (Category: Fast Slow Pointers)
+7. Triplet sum to zero (Category: Two Pointers)
+8. no-repeat substring (Category: Sliding Window)
+9. Longest Substring with K Distinct Characters (Category: Sliding Window)
+10. Merged Intervals (Category: Merge Intervals)
+11. Smallest Subarray with given sum (Category: Sliding Window)
+12. Start of LL Cycle (Category: Fast Slow Pointers)
+13. Dutch National Problem (Category: Two Pointers)
+14. Happy Number (Category: Fast Slow Pointers)
+15. Longest Subarray with Ones after Replacement (Category: Sliding Window)
+16. Problem Challenge - Palindrome LL (Category: Fast Slow Pointers)
+17. LinkedList Cycle (Category: Fast Slow Pointers)
+18. Cyclic Sort (Category: Cyclic Sort)
+19. Maximum Sum Subarray of Size K (Category: Sliding Window)
+20. Longest Substring with Same Letters after Replacement (Category: Sliding Window)
+21. pair with target sum (Category: Two Pointers)
+22. Introduction (Category: Sliding Window)
+23. Middle of LL (Category: Fast Slow Pointers)
+
+Problem:
+
+- Find all Missing Numbers (Category: Cyclic Sort)
+
+---
+
 ### Thursday, June 27th
 
 Solutions To Review:
 
 1. Merge Intervals (just studying)
 2. LL problem challenge 3
+
+Problems:
+
+1. Find all Missing Numbers
 
 ---
 
