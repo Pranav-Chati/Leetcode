@@ -1,9 +1,22 @@
 public class CyclicSort {
     /*
      * review: Cyclic Sort
+     * We are given an array containing ‘n’ objects. Each object, when created, was
+     * assigned a unique number from 1 to ‘n’ based on their creation sequence. This
+     * means that the object with sequence number ‘3’ was created just before the
+     * object with sequence number ‘4’.
+     * 
+     * Write a function to sort the objects in-place on their creation sequence
+     * number in O(n) and without any extra space. For simplicity, let’s assume we
+     * are passed an integer array containing only the sequence numbers, though each
+     * number is actually an object.
      */
-
+    public static void cyclicSort(int[] nums) {}
     /*
-     * review: Find the Missing Number 
+     * review: Find the Missing Number
+     * We are given an array containing ‘n’ distinct numbers taken from the range 0
+     * to ‘n’. Since the array has only ‘n’ numbers out of the total ‘n+1’ numbers,
+     * find the missing number.
      */
+    public static int findTheMissingNumber(int[] nums) {}
 }

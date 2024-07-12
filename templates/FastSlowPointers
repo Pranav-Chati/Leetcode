@@ -2,25 +2,42 @@ public class FastSlowPointers {
 
     /*
      * review: LinkedList Cycle
+     * Given the head of a Singly LinkedList, write a function to determine if the
+     * LinkedList has a cycle in it or not.
      */
+    public static boolean llCycle(ListNode head) {}
 
     /*
      * review: Start of LL Cycle
+     * Given the head of a Singly LinkedList that contains a cycle, write a function
+     * to find the starting node of the cycle.
      */
+    public static ListNode startOfLLCycle(ListNode head) {}
 
     /*
      * review: Happy Number
      */
+    public static boolean happyNumber(int number) {}
 
     /*
      * review: Middle of the Linked List
      */
+    public static ListNode middleLL(ListNode head) {}
     
     /*
      * review: Palindrome LinkedList
+     * Given the head of a Singly LinkedList, write a method to check if the
+     * LinkedList is a palindrome or not.
      */
+    public static boolean palindromeLL(ListNode head) {}
 
     /*
-     * review: Rearrange a LL
+     * review: Problem Challenge 2 - Rearrange a LL
+     * Given the head of a Singly LinkedList, write a method to modify the
+     * LinkedList such that the nodes from the second half of the LinkedList are
+     * inserted alternately to the nodes from the first half in reverse order. So if
+     * the LinkedList has nodes 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> null, your method
+     * should return 1 -> 6 -> 2 -> 5 -> 3 -> 4 -> null.
      */
+    public static ListNode rearrangeLL(ListNode head) {}
 }
