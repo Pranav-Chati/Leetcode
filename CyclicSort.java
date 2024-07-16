@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class CyclicSort {
     /*
      * review: Cyclic Sort
@@ -14,9 +17,8 @@ public class CyclicSort {
     public static void cyclicSort(int[] nums) {
         int i = 0;
         while (i < nums.length) {
-            int j = nums[i] - 1;
-            if (nums[j] != nums[i])
-                swap(nums, i, j);
+            if (nums[i] != i)
+                swap(nums, i, nums[i]);
             else
                 i++;
         }
@@ -56,7 +58,59 @@ public class CyclicSort {
         return nums.length;
     }
 
+    /*
+     * review: Find All Missing Numbers
+     * We are given an unsorted array containing numbers taken from the range 1 to
+     * ‘n’. The array can have duplicates, which means some numbers will be missing.
+     * Find all those missing numbers.
+     */
+    public static List<Integer> findAllMissingNumbers(int[] nums) {
+        List<Integer> missingNumbers = new ArrayList<>();
+        int i = 0;
+        while (i < nums.length) {
+            if (nums[i] != nums[nums[i] - 1])
+                swap(nums, i, nums[i] - 1);
+            else
+                i++;
+        }
+
+        for (i = 0; i < nums.length; i++)
+            if (nums[i] != i + 1)
+                missingNumbers.add(i + 1);
+        return missingNumbers;
+    }
+
+    /*
+     * problem: Find the Duplicate Number
+     * We are given an unsorted array containing ‘n+1’ numbers taken from the range
+     * 1 to ‘n’. The array has only one duplicate but it can be repeated multiple
+     * times. Find that duplicate number without using any extra space. You are,
+     * however, allowed to modify the input array.
+     */
+    public static int findTheDuplicateNumber(int[] nums) {
+
+        int i = 0;
+        while (i < nums.length) {
+            if (nums[i] != nums[nums[i] - 1])
+                swap(nums, i, nums[i] - 1);
+            else
+                i++;
+        }
+
+        for (i = 1; i < nums.length; i++) {
+            if (nums[i] != i + 1)
+                return nums[i];
+        }
+        return -1;
+    }
+
     public static void main(String[] args) {
-        System.out.println(findTheMissingNumber(new int[] { 8, 3, 5, 2, 4, 6, 0, 1 }));
+        // System.out.println(findTheMissingNumber(new int[] { 8, 3, 5, 2, 4, 6, 0, 1
+        // }));
+        // System.out.println(findAllMissingNumbers(new int[] { 2, 4, 1, 2 }));
+        // System.out.println(findAllMissingNumbers(new int[] { 2, 3, 2, 1 }));
+        System.out.println(findTheDuplicateNumber(new int[] { 1, 4, 4, 3, 2 }));
+        System.out.println(findTheDuplicateNumber(new int[] { 2, 4, 1, 4, 4 }));
+        System.out.println(findTheDuplicateNumber(new int[] { 2, 1, 3, 3, 5, 4 }));
     }
 }

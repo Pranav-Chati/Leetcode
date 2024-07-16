@@ -1,7 +1,5 @@
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 public class SlidingWindow {
     /*
@@ -144,16 +142,15 @@ public class SlidingWindow {
     public static int noRepeatSubstring(String word) {
         int maxSubstring = 0;
         int windowStart = 0;
-        Set<Character> noDuplicates = new HashSet<>();
+        Map<Character, Integer> noDuplicates = new HashMap<>();
 
         for (int windowEnd = 0; windowEnd < word.length(); windowEnd++) {
             char current = word.charAt(windowEnd);
 
-            if (noDuplicates.contains(current)) {
-                windowStart = windowEnd;
-                noDuplicates.clear();
+            if (noDuplicates.containsKey(current)) {
+                windowStart = Math.max(windowStart, noDuplicates.get(current) + 1);
             }
-            noDuplicates.add(current);
+            noDuplicates.put(current, windowEnd);
             maxSubstring = Math.max(maxSubstring, windowEnd - windowStart + 1);
         }
         return maxSubstring;

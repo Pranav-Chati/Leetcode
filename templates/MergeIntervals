@@ -1,5 +1,9 @@
 public class MergedIntervals {
     /*
      * review: merge intervals
+     * Given a list of intervals, merge all the overlapping intervals to produce a
+     * list that has only mutually exclusive intervals.
      */
+    public static int[][] mergeIntervals(int[][] nums) {}
+    public static List<Interval> mergeIntervalsList(List<Interval> intervals) {}
 }

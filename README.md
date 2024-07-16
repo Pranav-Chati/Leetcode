@@ -47,13 +47,15 @@ Problems I dont fully understand:
 
 **Pattern Merge Intervals**
 
-1. Introduction/Merged Intervals > I
+1. Introduction/Merged Intervals > II
 
 ---
 
 **Pattern Cyclic Sort**
 
 1. Introduction/Cyclic Sort > II
-2. Find the missing number > I
+2. Find the missing number > II
+3. Find all missing numbers > I
+4. Find the duplicate number > I
 
 ---

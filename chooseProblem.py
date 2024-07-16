@@ -29,11 +29,13 @@ problems = {
         "6. Problem Challenge - Rearrange a LL",
     ],
     "Merge Intervals": [
-        # "1. Merged Intervals",
+        "1. Merged Intervals",
     ],
     "Cyclic Sort": [
         "1. Cyclic Sort",
         "2. Find the missing number",
+        "3. Find all missing numbers",
+        "4. Find the duplicate number",
     ],
 }
 

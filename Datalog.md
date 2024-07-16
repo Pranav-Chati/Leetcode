@@ -2,21 +2,24 @@
 
 Contains date and what problems were solved
 
-### Friday, July 12th
-
-Problems to prove / Questions?
-
-1. no-repeat substring (Category: Sliding Window)
-2. Dutch National Problem
-3. Longest Substring with Same Letters after Replacement (Category: Sliding Window)
-4. Start of LL Cycle (Category: Fast Slow Pointers)
-5. Find the missing number (Category: Cyclic Sort) - compare your solution to the actual solution
-6. What is cyclic sort? What does that mean exactly?
+### Monday, July 14th
 
 Problem:
 
 1. Merge Intervals (Category: Merge Intervals)
 2. Find all Missing Numbers (Category: Cyclic Sort)
+3. Find the duplicate number (Category: Cyclic Sort)
+
+### Sunday, July 13th
+
+Problems to prove / Questions?
+
+1. ✅ no-repeat substring (Category: Sliding Window)
+2. Dutch National Problem
+3. Longest Substring with Same Letters after Replacement (Category: Sliding Window)
+4. ✅ Start of LL Cycle (Category: Fast Slow Pointers)
+5. ✅ Find the missing number (Category: Cyclic Sort) - compare your solution to the actual solution
+6. ✅ What is cyclic sort? What does that mean exactly?
 
 ### Thursday, July 11th
 
