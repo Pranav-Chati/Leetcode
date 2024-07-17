@@ -2,6 +2,44 @@
 
 Contains date and what problems were solved
 
+### Tuesday, July 15th
+
+Review:
+
+1. Maximum Sum Subarray of Size K (Category: Sliding Window)
+2. Triplet sum to zero (Category: Two Pointers)
+3. LinkedList Cycle (Category: Fast Slow Pointers)
+4. Problem Challenge - Palindrome LL (Category: Fast Slow Pointers)
+5. Squaring a sorted array (Category: Two Pointers)
+6. Fruits into basket (Category: Sliding Window)
+7. Longest Subarray with Ones after Replacement (Category: Sliding Window)
+8. Start of LL Cycle (Category: Fast Slow Pointers)
+9. triplet sum close to target (Category: Two Pointers)
+10. Happy Number (Category: Fast Slow Pointers)
+11. Longest Substring with K Distinct Characters (Category: Sliding Window)
+12. no-repeat substring (Category: Sliding Window)
+13. Triplets with Smaller Sum (Category: Two Pointers)
+14. pair with target sum (Category: Two Pointers)
+15. Find the duplicate number (Category: Cyclic Sort)
+16. Find the missing number (Category: Cyclic Sort)
+17. Problem Challenge - Rearrange a LL (Category: Fast Slow Pointers)
+18. Smallest Subarray with given sum (Category: Sliding Window)
+19. Introduction (Category: Sliding Window)
+20. Find all missing numbers (Category: Cyclic Sort)
+21. Middle of LL (Category: Fast Slow Pointers)
+22. Dutch National Problem (Category: Two Pointers)
+23. Longest Substring with Same Letters after Replacement (Category: Sliding Window)
+24. Cyclic Sort (Category: Cyclic Sort)
+25. Merged Intervals (Category: Merge Intervals)
+26. Remove Duplicates (Category: Two Pointers)
+
+Problem:
+
+1. Insert Interval (Category: Merge Intervals)
+2. Find all Duplicate Numbers (Category: Cyclic Sort)
+3. Reverse a LL (Category: In-place Reversal of a LinkedList)
+4. Reverse a sub-list (Category: In-place Reversal of a LinkedList)
+
 ### Monday, July 14th
 
 Problem:
