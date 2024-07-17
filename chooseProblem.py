@@ -37,6 +37,10 @@ problems = {
         "3. Find all missing numbers",
         "4. Find the duplicate number",
     ],
+    "InPlaceReversalLinkedList": [
+        "1. Reverse a LinkedList",
+        "2. Reverse a Sub-list",
+    ],
 }
 
 

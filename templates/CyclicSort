@@ -37,4 +37,12 @@ public class CyclicSort {
      * however, allowed to modify the input array.
      */
     public static int findTheDuplicateNumber(int[] nums) {}
+
+    /*
+     * problem: Find all Duplicate Numbers
+     * We are given an unsorted array containing ‘n’ numbers taken from the range 1
+     * to ‘n’. The array has some duplicates, find all the duplicate numbers without
+     * using any extra space.
+     */
+    public static List<Integer> findAllDuplicateNumbers(int[] nums) {}
 }
