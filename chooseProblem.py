@@ -25,8 +25,8 @@ problems = {
         "2. Start of LL Cycle",
         "3. Happy Number",
         "4. Middle of LL",
-        "5. Problem Challenge - Palindrome LL",
-        "6. Problem Challenge - Rearrange a LL",
+        "5. Problem Challenge 1 - Palindrome LL",
+        "6. Problem Challenge 2 - Rearrange a LL",
     ],
     "Merge Intervals": [
         "1. Merged Intervals",
@@ -36,6 +36,7 @@ problems = {
         "2. Find the missing number",
         "3. Find all missing numbers",
         "4. Find the duplicate number",
+        "5. Problem Challenge 1 - Find the Corrupt Pair",
     ],
     "InPlaceReversalLinkedList": [
         "1. Reverse a LinkedList",

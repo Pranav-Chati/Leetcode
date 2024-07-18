@@ -58,6 +58,7 @@ Problems I dont fully understand:
 3. Find all missing numbers > II
 4. Find the duplicate number > II
 5. Find all duplicate numbers > I
+6. Problem Challenge 1 - Find the Corrupt Pair > I
 
 ---
 
@@ -65,3 +66,4 @@ Problems I dont fully understand:
 
 1. Reverse a LinkedList > I
 2. Reverse Subsection of Linked List > I
+3. Reverse every K-element Sub-list > I

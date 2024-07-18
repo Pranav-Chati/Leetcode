@@ -2,7 +2,39 @@
 
 Contains date and what problems were solved
 
-### Tuesday, July 15th
+### Thursday, July 18th
+
+Review:
+
+- Insert Interval (Category: Merge Intervals) 
+- Reverse every K-element Sub-list (Category: In-place Reversal of a LinkedList)
+
+Problems:
+
+1. Problem Challenge 2 (Category: Cyclic Sort)
+2. Problem Challenge 1 (Category: In-place Reversal of a LinkedList)
+
+---
+
+### Wednesday, July 17th
+
+Debug through solution:
+
+- ✅ no-repeat substring (Category: Sliding Window)
+- ✅ Longest Substring with Same Letters after Replacement (Category: Sliding Window)
+- ✅ Find all missing numbers (Category: Cyclic Sort)
+- Find the duplicate number (Category: Cyclic Sort)
+- ✅ Find all duplicate numbers (Category: Cyclic Sort)
+
+Problems:
+
+1. Insert Interval (Category: Merge Intervals)
+2. Reverse every K-element Sub-list (Category: In-place Reversal of a LinkedList)
+3. Problem Challenge 1 (Category: Cyclic Sort)
+
+---
+
+### Tuesday, July 16th
 
 Review:
 
@@ -40,7 +72,9 @@ Problem:
 3. Reverse a LL (Category: In-place Reversal of a LinkedList)
 4. Reverse a sub-list (Category: In-place Reversal of a LinkedList)
 
-### Monday, July 14th
+---
+
+### Monday, July 15th
 
 Problem:
 
@@ -48,7 +82,7 @@ Problem:
 2. Find all Missing Numbers (Category: Cyclic Sort)
 3. Find the duplicate number (Category: Cyclic Sort)
 
-### Sunday, July 13th
+### Sunday, July 14th
 
 Problems to prove / Questions?
 
@@ -58,6 +92,8 @@ Problems to prove / Questions?
 4. ✅ Start of LL Cycle (Category: Fast Slow Pointers)
 5. ✅ Find the missing number (Category: Cyclic Sort) - compare your solution to the actual solution
 6. ✅ What is cyclic sort? What does that mean exactly?
+
+---
 
 ### Thursday, July 11th
 

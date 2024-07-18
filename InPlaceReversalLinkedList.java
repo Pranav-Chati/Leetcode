@@ -53,14 +53,93 @@ public class InPlaceReversalLinkedList {
         return head;
     }
 
+    /*
+     * problem: Reverse every K-element Sub-list
+     * Given the head of a LinkedList and a number ‘k’, reverse every ‘k’ sized
+     * sub-list starting from the head.
+     * 
+     * If, in the end, you are left with a sub-list with less than ‘k’ elements,
+     * reverse it too.
+     */
+    public static ListNode reverseEveryKElementSubList(ListNode head, int k) {
+        ListNode beforeSection = null;
+        ListNode firstK = head;
+        ListNode lastK = findLastK(firstK, k);
+        ListNode newSection = null;
+        while (lastK.next != null) {
+            newSection = reverseSubsection(firstK, lastK);
+            if (beforeSection == null) {
+                beforeSection = head;
+                head = lastK;
+            } else {
+                beforeSection.next = lastK;
+                beforeSection = firstK;
+            }
+            firstK = newSection;
+            lastK = findLastK(firstK, k);
+        }
+
+        // it will always return early so we can
+        newSection = reverse(firstK);
+        beforeSection.next = lastK;
+
+        return head;
+    }
+
+    public static ListNode findLastK(ListNode head, int k) {
+        while (head.next != null && k > 1) {
+            head = head.next;
+            k--;
+        }
+        return head;
+    }
+
+    public static ListNode reverseSubsection(ListNode first, ListNode last) {
+        ListNode prev = last.next;
+        ListNode stop = null;
+        if (last.next != null)
+            stop = new ListNode(last.next.value);
+        while (first.value != stop.value) {
+            ListNode next = first.next;
+            first.next = prev;
+            prev = first;
+            first = next;
+        }
+
+        return first;
+    }
+
+    public static void printLL(ListNode result) {
+        while (result != null) {
+            System.out.print(result.value + " ");
+            result = result.next;
+        }
+        System.out.println('\n');
+    }
+
     public static void main(String[] args) {
+        // ListNode head = new ListNode(1);
+        // head.next = new ListNode(2);
+        // head.next.next = new ListNode(3);
+        // head.next.next.next = new ListNode(4);
+        // head.next.next.next.next = new ListNode(5);
+        // ListNode result = reverseSubList(head, 2, 4);
+
+        // System.out.print("Nodes of the reversed LinkedList are: ");
+        // while (result != null) {
+        // System.out.print(result.value + " ");
+        // result = result.next;
+        // }
         ListNode head = new ListNode(1);
         head.next = new ListNode(2);
         head.next.next = new ListNode(3);
         head.next.next.next = new ListNode(4);
         head.next.next.next.next = new ListNode(5);
-        ListNode result = reverseSubList(head, 2, 4);
+        head.next.next.next.next.next = new ListNode(6);
+        head.next.next.next.next.next.next = new ListNode(7);
+        // head.next.next.next.next.next.next.next = new ListNode(8);
 
+        ListNode result = reverseEveryKElementSubList(head, 3);
         System.out.print("Nodes of the reversed LinkedList are: ");
         while (result != null) {
             System.out.print(result.value + " ");

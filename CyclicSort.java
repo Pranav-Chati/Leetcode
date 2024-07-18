@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class CyclicSort {
@@ -143,12 +144,45 @@ public class CyclicSort {
         return duplicates;
     }
 
-    public static void main(String[] args) {
-        System.out.println(findTheDuplicateNumber(new int[] { 1, 4, 4, 3, 2 }));
-        System.out.println(findTheDuplicateNumber(new int[] { 2, 1, 3, 3, 5, 4 }));
-        System.out.println(findTheDuplicateNumber(new int[] { 2, 4, 1, 4, 4 }));
+    /*
+     * problem: Find the Corrupt Pair
+     * We are given an unsorted array containing ‘n’ numbers taken from the range 1
+     * to ‘n’. The array originally contained all the numbers from 1 to ‘n’, but due
+     * to a data error, one of the numbers got duplicated which also resulted in one
+     * number going missing. Find both these numbers.
+     */
+    public static int[] findCorruptPair(int[] nums) {
+        int i = 0;
+        while (i < nums.length) {
+            if (nums[i] != nums[nums[i] - 1])
+                swap(nums, i, nums[i] - 1);
+            else
+                i++;
+        }
 
-        System.out.println(findAllDuplicateNumbers(new int[] { 3, 4, 4, 5, 5 }));
+        for (i = 0; i < nums.length; i++) {
+            if (nums[i] != i + 1) {
+                return new int[] { nums[i], i + 1 };
+            }
+        }
+
+        return new int[] { -1, -1 };
+    }
+
+    public static void main(String[] args) {
+        // System.out.println(findTheDuplicateNumber(new int[] { 1, 4, 4, 3, 2 }));
+        // System.out.println(findTheDuplicateNumber(new int[] { 2, 1, 3, 3, 5, 4 }));
+        // System.out.println(findTheDuplicateNumber(new int[] { 2, 4, 1, 4, 4 }));
+
+        // System.out.println(findAllDuplicateNumbers(new int[] { 3, 4, 4, 5, 5 }));
+
+        // System.out.println(findAllMissingNumbers(new int[] { 2, 3, 1, 8, 2, 3, 5, 1
+        // }));
+        // System.out.println(findAllMissingNumbers(new int[] { 2, 4, 1, 2 }));
+        // System.out.println(findAllMissingNumbers(new int[] { 2, 3, 2, 1 }));
+
+        System.out.println(Arrays.toString(findCorruptPair(new int[] { 3, 1, 2, 5, 2 })) );
+
     }
 
 }

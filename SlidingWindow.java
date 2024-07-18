@@ -215,4 +215,15 @@ public class SlidingWindow {
 
         return maxLength;
     }
+
+    public static void main(String[] args) {
+
+        // System.out.println(noRepeatSubstring("aabccbb"));
+        // System.out.println(noRepeatSubstring("abbbb"));
+        // System.out.println(noRepeatSubstring("abccde"));
+
+        System.out.println(longestSubstringWithSameLettersAfterReplacement("aabccbb", 2));
+        System.out.println(longestSubstringWithSameLettersAfterReplacement("abbcb", 1));
+        System.out.println(longestSubstringWithSameLettersAfterReplacement("abccde", 1));
+    }
 }
