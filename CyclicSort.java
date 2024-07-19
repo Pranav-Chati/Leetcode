@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class CyclicSort {
@@ -169,7 +168,35 @@ public class CyclicSort {
         return new int[] { -1, -1 };
     }
 
+    /*
+     * problem: Find the Smallest Missing Positive Number
+     * Given an unsorted array containing numbers, find the smallest missing
+     * positive number in it.
+     */
+    public static int findTheSmallestMissingPositiveNumber(int[] nums) {
+        int i = 0;
+        while (i < nums.length) {
+            // ? this is a hybrid of missing number and duplicate number with a twist, need
+            // to take a look at it more
+            if (nums[i] > 0 && nums[i] <= nums.length && nums[i] != nums[nums[i] - 1])
+                swap(nums, i, nums[i] - 1);
+            else
+                i++;
+        }
+
+        int smallestInt = Integer.MAX_VALUE;
+        for (i = 0; i < nums.length; i++) {
+            if (nums[i] != i + 1)
+                smallestInt = i + 1;
+        }
+        return smallestInt;
+    }
+
     public static void main(String[] args) {
+        System.out.println(findTheSmallestMissingPositiveNumber(new int[] { -3, 1, 5, 4, 2 }));
+        System.out.println(findTheSmallestMissingPositiveNumber(new int[] { 3, -2, 0, 1, 2 }));
+        System.out.println(findTheSmallestMissingPositiveNumber(new int[] { 3, 2, 5, 1 }));
+
         // System.out.println(findTheDuplicateNumber(new int[] { 1, 4, 4, 3, 2 }));
         // System.out.println(findTheDuplicateNumber(new int[] { 2, 1, 3, 3, 5, 4 }));
         // System.out.println(findTheDuplicateNumber(new int[] { 2, 4, 1, 4, 4 }));
@@ -181,8 +208,8 @@ public class CyclicSort {
         // System.out.println(findAllMissingNumbers(new int[] { 2, 4, 1, 2 }));
         // System.out.println(findAllMissingNumbers(new int[] { 2, 3, 2, 1 }));
 
-        System.out.println(Arrays.toString(findCorruptPair(new int[] { 3, 1, 2, 5, 2 })) );
-
+        // System.out.println(Arrays.toString(findCorruptPair(new int[] { 3, 1, 2, 5, 2
+        // })));
     }
 
 }

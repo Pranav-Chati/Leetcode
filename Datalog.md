@@ -6,13 +6,14 @@ Contains date and what problems were solved
 
 Review:
 
-- Insert Interval (Category: Merge Intervals) 
+- ✅ Insert Interval (Category: Merge Intervals)
 - Reverse every K-element Sub-list (Category: In-place Reversal of a LinkedList)
 
 Problems:
 
-1. Problem Challenge 2 (Category: Cyclic Sort)
+1. ✅ Problem Challenge 2 (Category: Cyclic Sort)
 2. Problem Challenge 1 (Category: In-place Reversal of a LinkedList)
+3. ✅ Intervals Intersection (Category: Merge Intervals)
 
 ---
 
