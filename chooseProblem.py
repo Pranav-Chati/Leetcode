@@ -30,6 +30,7 @@ problems = {
     ],
     "Merge Intervals": [
         "1. Merged Intervals",
+        "2. Insert Interval"
     ],
     "Cyclic Sort": [
         "1. Cyclic Sort",
