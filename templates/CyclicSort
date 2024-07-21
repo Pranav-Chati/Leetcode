@@ -54,4 +54,11 @@ public class CyclicSort {
      * number going missing. Find both these numbers.
      */
     public static int[] findCorruptPair(int[] nums) {}
+
+    /*
+     * problem: Find the Smallest Missing Positive Number
+     * Given an unsorted array containing numbers, find the smallest missing
+     * positive number in it.
+     */
+    public static int findTheSmallestMissingPositiveNumber(int[] nums) {}
 }

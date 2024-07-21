@@ -6,4 +6,26 @@ public class MergedIntervals {
      */
     public static int[][] mergeIntervals(int[][] nums) {}
     public static List<Interval> mergeIntervalsList(List<Interval> intervals) {}
+
+    /*
+     * review: Insert Interval
+     * Given a list of non-overlapping intervals sorted by their start time, insert
+     * a given interval at the correct position and merge all necessary intervals to
+     * produce a list that has only mutually exclusive intervals.
+     */
+    public static List<Interval> insertInterval(List<Interval> intervals, Interval newInterval) {}
+
+    /*
+     * problem: Intervals Intersection
+     * Given two lists of intervals, find the intersection of these two lists. Each
+     * list consists of disjoint intervals sorted on their start time.
+     */
+    public static Interval[] intervalsIntersection(Interval[] arr1, Interval[] arr2) {}
+
+    /*
+     * problem: Conflicting Appointments
+     * Given an array of intervals representing ‘N’ appointments, find out if a
+     * person can attend all the appointments.
+     */
+    public static boolean conflictingAppointment(Interval[] intervals) {}
 }

@@ -30,7 +30,9 @@ problems = {
     ],
     "Merge Intervals": [
         "1. Merged Intervals",
-        "2. Insert Interval"
+        "2. Insert Interval",
+        "3. Intervals Intersection",
+        "4. Conflicting Appointments",
     ],
     "Cyclic Sort": [
         "1. Cyclic Sort",
@@ -38,10 +40,13 @@ problems = {
         "3. Find all missing numbers",
         "4. Find the duplicate number",
         "5. Problem Challenge 1 - Find the Corrupt Pair",
+        "6. Problem Challenge 2 - Find the Smallest Missing Positive Number",
     ],
     "InPlaceReversalLinkedList": [
         "1. Reverse a LinkedList",
         "2. Reverse a Sub-list",
+        "3. Reverse every K-element Sub-list",
+        "4. Reverse alternating K-element Sub-list",
     ],
 }
 
