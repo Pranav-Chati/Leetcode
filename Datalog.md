@@ -2,6 +2,51 @@
 
 Contains date and what problems were solved
 
+### Saturday, July 20th
+
+Review:
+
+1. Triplets with Smaller Sum (Category: Two Pointers)
+2. pair with target sum (Category: Two Pointers)
+3. Longest Substring with Same Letters after Replacement (Category: Sliding Window)
+4. Happy Number (Category: Fast Slow Pointers)
+5. Fruits into basket (Category: Sliding Window)
+6. Cyclic Sort (Category: Cyclic Sort)
+7. Longest Substring with K Distinct Characters (Category: Sliding Window)
+8. Find all missing numbers (Category: Cyclic Sort)
+9. triplet sum close to target (Category: Two Pointers)
+10. Maximum Sum Subarray of Size K (Category: Sliding Window)
+11. Remove Duplicates (Category: Two Pointers)
+12. Problem Challenge 2 - Rearrange a LL (Category: Fast Slow Pointers)
+13. Insert Interval (Category: Merge Intervals)
+14. Reverse a Sub-list (Category: InPlaceReversalLinkedList)
+15. LinkedList Cycle (Category: Fast Slow Pointers)
+16. Longest Subarray with Ones after Replacement (Category: Sliding Window)
+17. Dutch National Problem (Category: Two Pointers)
+18. Find the missing number (Category: Cyclic Sort)
+19. Start of LL Cycle (Category: Fast Slow Pointers)
+20. Triplet sum to zero (Category: Two Pointers)
+21. Problem Challenge 1 - Palindrome LL (Category: Fast Slow Pointers)
+22. Introduction (Category: Sliding Window)
+23. Find the duplicate number (Category: Cyclic Sort)
+24. Reverse a LinkedList (Category: InPlaceReversalLinkedList)
+25. no-repeat substring (Category: Sliding Window)
+26. Smallest Subarray with given sum (Category: Sliding Window)
+27. Squaring a sorted array (Category: Two Pointers)
+28. Problem Challenge 1 - Find the Corrupt Pair (Category: Cyclic Sort)
+29. Merged Intervals (Category: Merge Intervals)
+30. Middle of LL (Category: Fast Slow Pointers)
+
+Problems:
+
+1. ✅ Interval Intersection (Category: Merge Intervals)
+2. ✅ Conflicting Appointments (Category: Merge Intervals)
+3. ✅ Problem Challenge 2 (Category: Cyclic Sort)
+4. ✅ Reverse every K-element Sub-list (Category: In-place Reversal of a LinkedList)
+5. ✅ Problem Challenge 1 : Reverse alternating K-element Sub-list (Category: In-place Reversal of a LinkedList)
+
+---
+
 ### Thursday, July 18th
 
 Review:
