@@ -1,19 +1,13 @@
 package leetcode;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class TreeBreadthFirstSearch {
-    class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
+import helper.TreeNode;
 
-        TreeNode(int x) {
-            val = x;
-        }
-    }
+public class TreeBreadthFirstSearch {
 
     /*
      * * problem: Binary Tree Level Order Traversa * Given a binary tree, populate

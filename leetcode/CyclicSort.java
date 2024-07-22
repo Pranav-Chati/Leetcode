@@ -1,4 +1,5 @@
 package leetcode;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -120,7 +121,7 @@ public class CyclicSort {
         List<Integer> duplicates = new ArrayList<>();
         for (i = 0; i < nums.length; i++) {
             if (nums[i] != i + 1)
-                duplicates.add(i + 1);
+                duplicates.add(nums[i]);
         }
 
         return duplicates;
