@@ -1,10 +1,15 @@
+package leetcode;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Collections;
 
+import helper.Interval;
+
 public class MergedIntervals {
+
     /*
      * review: merge intervals
      * Given a list of intervals, merge all the overlapping intervals to produce a
@@ -158,13 +163,6 @@ public class MergedIntervals {
         // System.out.print("[" + interval.start + "," + interval.end + "] ");
         // System.out.println();
 
-        // Interval[] input = new Interval[] { new Interval(1, 4), new Interval(2, 5),
-        // new Interval(7, 9) };
-        // Interval[] input1 = new Interval[] { new Interval(6, 7), new Interval(2, 4),
-        // new Interval(8, 12) };
-        Interval[] input2 = new Interval[] { new Interval(4, 5), new Interval(2, 3), new Interval(3, 6) };
-
-        System.out.println(conflictingAppointment(input2));
     }
 
 }

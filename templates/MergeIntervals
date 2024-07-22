@@ -1,4 +1,14 @@
 public class MergedIntervals {
+    static class Interval {
+        int start;
+        int end;
+
+        public Interval(int start, int end) {
+            this.start = start;
+            this.end = end;
+        }
+    }
+    
     /*
      * review: merge intervals
      * Given a list of intervals, merge all the overlapping intervals to produce a

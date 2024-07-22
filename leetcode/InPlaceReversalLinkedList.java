@@ -1,3 +1,6 @@
+package leetcode;
+import helper.ListNode;
+
 public class InPlaceReversalLinkedList {
     /*
      * problem: Reverse a LinkedList

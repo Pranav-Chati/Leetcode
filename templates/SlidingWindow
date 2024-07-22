@@ -1,20 +1,20 @@
-public class PatternSlidingWindow {
+public class SlidingWindow {
     /*
-     * review: Introduction
+     * problem: Introduction
      * Given an array, find the average of all contiguous subarrays of size ‘K’ in
      * it.
      */
     public static int[] pairOfContiguousSubarrays(int[] nums, int K) {}
 
     /*
-     * review: Maximum Sum Subarray of Size K
+     * problem: Maximum Sum Subarray of Size K
      * Given an array of positive numbers and a positive number ‘k’, find the
      * maximum sum of any contiguous subarray of size ‘k’.
      */
     public static int maxSumSubarrayOfSizeK(int[] nums, int K) {}
 
     /*
-     * review: Smallest Subarray with a given sum
+     * problem: Smallest Subarray with a given sum
      * Given an array of positive numbers and a positive number ‘S’, find the length
      * of the smallest contiguous subarray whose sum is greater than or equal to
      * ‘S’. Return 0, if no such subarray exists.
@@ -22,14 +22,14 @@ public class PatternSlidingWindow {
     public static int smallestSubarrayWithGivenSum(int[] nums, int target) {}
 
     /*
-     * review: Longest Substring with K Distinct Characters
+     * problem: Longest Substring with K Distinct Characters
      * Given a string, find the length of the longest substring in it with no more
      * than K distinct characters.
      */
     public static int longestSubstringWithKDistinctCharacters(String word, int K) {}
 
     /*
-     * review: Fruits into Basket
+     * problem: Fruits into Basket
      * Given an array of characters where each character represents a fruit tree,
      * you are given two baskets and your goal is to put maximum number of fruits in
      * each basket. The only restriction is that each basket can have only one type
@@ -44,14 +44,14 @@ public class PatternSlidingWindow {
     public static int fruitsIntoBasket(char[] fruits) {}
 
     /*
-     * review: no-repeat substring
+     * problem: no-repeat substring
      * Given a string, find the length of the longest substring which has no
      * repeating characters.
      */
     public static int noRepeatSubstring(String word) {}
 
     /*
-     * review: Longest Substring with Same Letters after Replacement
+     * problem: Longest Substring with Same Letters after Replacement
      * Given a string with lowercase letters only, if you are allowed to replace no
      * more than ‘k’ letters with any letter, find the length of the longest
      * substring having the same letters after replacement.
@@ -59,7 +59,7 @@ public class PatternSlidingWindow {
     public static int longestSubstringWithSameLettersAfterReplacement(String word, int K) {}
 
     /*
-     * review: Longest Subarray with Ones after Replacement
+     * problem: Longest Subarray with Ones after Replacement
      * Given an array containing 0s and 1s, if you are allowed to replace no more
      * than ‘k’ 0s with 1s, find the length of the longest contiguous subarray
      * having all 1s.

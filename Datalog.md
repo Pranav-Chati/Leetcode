@@ -2,6 +2,25 @@
 
 Contains date and what problems were solved
 
+### Sunday, July 21st
+
+Review Solutions for:
+
+- Longest Substring with Same Letters after Replacement (Category: Sliding Window)
+- Reverse a Sub-list (Category: InPlaceReversalLinkedList)
+- no-repeat substring (Category: Sliding Window)
+- Reverse every K-element Sub-list (Category: In-place Reversal of a LinkedList)
+- Problem Challenge 1 : Reverse alternating K-element Sub-list (Category: In-place Reversal of a LinkedList)
+
+**Create test scripts for every problem**
+
+Problems:
+
+- ✅ Binary Tree Level Order Traversal (Category: Tree Breadth First Search)
+- ✅ Binary Tree Path Sum (Category: Tree Depth First Search)
+
+---
+
 ### Saturday, July 20th
 
 Review:

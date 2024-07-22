@@ -1,3 +1,6 @@
+package leetcode;
+import helper.ListNode;
+
 public class FastSlowPointers {
     public static ListNode reverse(ListNode head) {
         ListNode prev = null;

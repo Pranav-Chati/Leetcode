@@ -1,3 +1,5 @@
+package leetcode;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -62,7 +64,7 @@ public class SlidingWindow {
             windowSum += nums[windowEnd];
 
             while (windowSum >= target) {
-                smallestSum = Math.min(smallestSum, windowSum);
+                smallestSum = Math.min(smallestSum, windowEnd - windowStart + 1);
                 windowSum -= nums[windowStart];
                 windowStart++;
             }
