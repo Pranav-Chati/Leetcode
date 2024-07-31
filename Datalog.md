@@ -2,7 +2,51 @@
 
 Contains date and what problems were solved
 
-### Tuesday, July 30th 
+### Tuesday, July 30th
+
+Review:
+
+1. Cyclic Sort (Category: Cyclic Sort)
+2. no-repeat substring (Category: Sliding Window)
+3. LinkedList Cycle (Category: Fast Slow Pointers)
+4. Introduction (Category: Sliding Window)
+5. Longest Substring with Same Letters after Replacement (Category: Sliding Window)
+6. Longest Subarray with Ones after Replacement (Category: Sliding Window)
+7. triplet sum close to target (Category: Two Pointers)
+8. Insert Interval (Category: Merge Intervals)
+9. Problem Challenge 1 - Reverse alternating K-element Sub-list (Category: InPlaceReversalLinkedList)
+10. Start of LL Cycle (Category: Fast Slow Pointers)
+11. Find the duplicate number (Category: Cyclic Sort)
+12. Problem Challenge 1 - Palindrome LL (Category: Fast Slow Pointers)
+13. Problem Challenge 2 - Rearrange a LL (Category: Fast Slow Pointers)
+14. Reverse every K-element Sub-list (Category: InPlaceReversalLinkedList)
+15. Triplets with Smaller Sum (Category: Two Pointers)
+16. Happy Number (Category: Fast Slow Pointers)
+17. Reverse a Sub-list (Category: InPlaceReversalLinkedList)
+18. Find the missing number (Category: Cyclic Sort)
+19. Maximum Sum Subarray of Size K (Category: Sliding Window)
+20. Remove Duplicates (Category: Two Pointers)
+21. Triplet sum to zero (Category: Two Pointers)
+22. Problem Challenge 2 - Find the Smallest Missing Positive Number (Category: Cyclic Sort)
+23. Reverse a LinkedList (Category: InPlaceReversalLinkedList)
+24. Problem Challenge 1 - Find the Corrupt Pair (Category: Cyclic Sort)
+25. Smallest Subarray with given sum (Category: Sliding Window)
+26. Fruits into basket (Category: Sliding Window)
+27. Squaring a sorted array (Category: Two Pointers)
+28. Dutch National Problem (Category: Two Pointers)
+29. Longest Substring with K Distinct Characters (Category: Sliding Window)
+30. Find all missing numbers (Category: Cyclic Sort)
+31. Conflicting Appointments (Category: Merge Intervals)
+32. Middle of LL (Category: Fast Slow Pointers)
+33. Intervals Intersection (Category: Merge Intervals)
+34. Merged Intervals (Category: Merge Intervals)
+35. pair with target sum (Category: Two Pointers)
+
+- BFS, DFS, and Knapsack
+
+---
+
+### Monday, July 29th
 
 Review Solutions for:
 

@@ -4,7 +4,7 @@ public class SlidingWindow {
      * Given an array, find the average of all contiguous subarrays of size ‘K’ in
      * it.
      */
-    public static int[] pairOfContiguousSubarrays(int[] nums, int K) {}
+    public static double[] pairOfContiguousSubarrays(int[] nums, int K) {}
 
     /*
      * problem: Maximum Sum Subarray of Size K

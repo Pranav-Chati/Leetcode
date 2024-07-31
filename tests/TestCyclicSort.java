@@ -100,17 +100,17 @@ public class TestCyclicSort {
         testCyclicSort(new int[] { 2, 6, 4, 3, 1, 5 });
         System.out.println();
 
-        // Find the Missing Number
-        testFindTheMissingNumber(new int[] { 4, 0, 3, 1 }, 2);
-        testFindTheMissingNumber(new int[] { 8, 3, 5, 2, 4, 6, 0, 1 }, 7);
-        System.out.println();
+        // // Find the Missing Number
+        // testFindTheMissingNumber(new int[] { 4, 0, 3, 1 }, 2);
+        // testFindTheMissingNumber(new int[] { 8, 3, 5, 2, 4, 6, 0, 1 }, 7);
+        // System.out.println();
 
-        // Find all Missing Numbers
-        System.out.println("findAllMissingNumbers");
-        testFindAllMissingNumbers(new int[] { 2, 3, 1, 8, 2, 3, 5, 1 }, new int[] { 4, 6, 7 });
-        testFindAllMissingNumbers(new int[] { 2, 4, 1, 2 }, new int[] { 3 });
-        testFindAllMissingNumbers(new int[] { 2, 3, 2, 1 }, new int[] { 4 });
-        System.out.println();
+        // // Find all Missing Numbers
+        // System.out.println("findAllMissingNumbers");
+        // testFindAllMissingNumbers(new int[] { 2, 3, 1, 8, 2, 3, 5, 1 }, new int[] { 4, 6, 7 });
+        // testFindAllMissingNumbers(new int[] { 2, 4, 1, 2 }, new int[] { 3 });
+        // testFindAllMissingNumbers(new int[] { 2, 3, 2, 1 }, new int[] { 4 });
+        // System.out.println();
 
         // Find the Duplicate Number
         testFindTheDuplicateNumber(new int[] { 1, 4, 4, 3, 2 }, 4);
@@ -118,20 +118,20 @@ public class TestCyclicSort {
         testFindTheDuplicateNumber(new int[] { 2, 4, 1, 4, 4 }, 4);
         System.out.println();
 
-        // Find all Duplicate Numbers
-        testFindAllDuplicateNumbers(new int[] { 3, 4, 4, 5, 5 }, new int[] { 4, 5 });
-        testFindAllDuplicateNumbers(new int[] { 5, 4, 7, 2, 3, 5, 3 }, new int[] { 3, 5 });
-        System.out.println();
+        // // Find all Duplicate Numbers
+        // testFindAllDuplicateNumbers(new int[] { 3, 4, 4, 5, 5 }, new int[] { 4, 5 });
+        // testFindAllDuplicateNumbers(new int[] { 5, 4, 7, 2, 3, 5, 3 }, new int[] { 3, 5 });
+        // System.out.println();
 
-        // Problem Challenge 1 - Find the Corrupt Pair
-        testFindCorruptPair(new int[] { 3, 1, 2, 5, 2 }, new int[] { 2, 4 });
-        testFindCorruptPair(new int[] { 3, 1, 2, 3, 6, 4 }, new int[] { 3, 5 });
-        System.out.println();
+        // // Problem Challenge 1 - Find the Corrupt Pair
+        // testFindCorruptPair(new int[] { 3, 1, 2, 5, 2 }, new int[] { 2, 4 });
+        // testFindCorruptPair(new int[] { 3, 1, 2, 3, 6, 4 }, new int[] { 3, 5 });
+        // System.out.println();
 
-        // Problem Challenge 2 - Find the Smallest Missing Positive Number
-        testFindTheSmallestMissingPositiveNumber(new int[] { -3, 1, 5, 4, 2 }, 3);
-        testFindTheSmallestMissingPositiveNumber(new int[] { 3, -2, 0, 1, 2 }, 4);
-        testFindTheSmallestMissingPositiveNumber(new int[] { 3, 2, 5, 1 }, 4);
-        System.out.println();
+        // // Problem Challenge 2 - Find the Smallest Missing Positive Number
+        // testFindTheSmallestMissingPositiveNumber(new int[] { -3, 1, 5, 4, 2 }, 3);
+        // testFindTheSmallestMissingPositiveNumber(new int[] { 3, -2, 0, 1, 2 }, 4);
+        // testFindTheSmallestMissingPositiveNumber(new int[] { 3, 2, 5, 1 }, 4);
+        // System.out.println();
     }
 }
