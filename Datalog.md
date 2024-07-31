@@ -2,7 +2,7 @@
 
 Contains date and what problems were solved
 
-### Sunday, July 21st
+### Tuesday, July 30th 
 
 Review Solutions for:
 
@@ -11,8 +11,19 @@ Review Solutions for:
 - no-repeat substring (Category: Sliding Window)
 - Reverse every K-element Sub-list (Category: In-place Reversal of a LinkedList)
 - Problem Challenge 1 : Reverse alternating K-element Sub-list (Category: In-place Reversal of a LinkedList)
+- Binary Tree Level Order Traversal (Category: Tree Breadth First Search)
+- Binary Tree Path Sum (Category: Tree Depth First Search)
+  **Add problems to chooseProblems + templates**
 
-**Create test scripts for every problem**
+Problems:
+
+- ✅ Reverse Level Order Traversal (Category: Tree Breadth First Search)
+- ✅ All Paths for a Sum (Category: Tree Depth First Search)
+- ✅ 0/1 Knapsack (Category: 0 or 1 Knapsack)
+
+---
+
+### Sunday, July 21st
 
 Problems:
 

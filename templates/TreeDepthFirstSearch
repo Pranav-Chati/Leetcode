@@ -9,4 +9,11 @@ public class TreeDepthFirstSearch {
      */
     public static boolean binaryTreePathSum(TreeNode root, int sum) {
     }
+
+    /*
+     * problem: All Paths for a Sum
+     * Given a binary tree and a number ‘S’, find all paths from root-to-leaf such
+     * that the sum of all the node values of each path equals ‘S’.
+     */
+    public static int allPathsSum(TreeNode root, int sum) {}
 }

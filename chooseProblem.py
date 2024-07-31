@@ -46,7 +46,7 @@ problems = {
         "1. Reverse a LinkedList",
         "2. Reverse a Sub-list",
         "3. Reverse every K-element Sub-list",
-        "4. Reverse alternating K-element Sub-list",
+        "4. Problem Challenge 1 - Reverse alternating K-element Sub-list",
     ],
 }
 
