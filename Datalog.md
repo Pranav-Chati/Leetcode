@@ -2,6 +2,27 @@
 
 Contains date and what problems were solved
 
+### Wednesday, July 31st
+
+Problem:
+
+1. Zigzag Traversal (Category: Tree Breadth First Search)
+2. Sum of Path Numbers (Category: Tree Depth First Search)
+3. Level Averages in a Binary Tree (Category: Tree Breadth First Search)
+4. Path With Given Sequence (Category: Tree Depth First Search)
+5. Minimum Depth of a Binary Tree (Category: Tree Breadth First Search)
+6. Level Order Successor (Category: Tree Breadth First Search)
+7. Count Paths for a Sum (Category: Tree Depth First Search)
+8. 0/1 Knapsack (Category: 0 or 1 Knapsack (DP))
+9. Equal Subset Sum Partition (Category: 0 or 1 Knapsack (DP))
+
+Didn't get too:
+Problem Challenge 1 (Category: Tree Depth First Search)
+Reverse every K-element Sub-list (Category: InPlaceReversalLinkedList)
+Problem Challenge 1 - Reverse alternating K-element Sub-list (Category: InPlaceReversalLinkedList)
+
+---
+
 ### Tuesday, July 30th
 
 Review:

@@ -1,0 +1,17 @@
+public class Knapsack {
+    /*
+     * problem: 0/1 Knapsack
+     * Given the weights and profits of ‘N’ items, we are asked to put these items
+     * in a knapsack which has a capacity ‘C’. The goal is to get the maximum profit
+     * out of the items in the knapsack. Each item can only be selected once, as we
+     * don’t have multiple quantities of any item.
+     */
+    public static int solveKnapsack(int[] profits, int[] weights, int capacity) {}
+
+    /*
+     * problem: Equal Subset Sum Partition
+     * Given a set of positive numbers, find if we can partition it into two subsets
+     * such that the sum of elements in both subsets is equal.
+     */
+    public static boolean equalSubsetSumPartition(int[] nums) {}
+}

@@ -48,6 +48,25 @@ problems = {
         "3. Reverse every K-element Sub-list",
         "4. Problem Challenge 1 - Reverse alternating K-element Sub-list",
     ],
+    "Tree Breadth First Search": [
+        "1. Binary Tree Level Order Traversal",
+        "2. Reverse Level Order Traversal",
+        "3. Zigzag Traversal",
+        "4. Level Averages in a Binary Tree",
+        "5. Minimum Depth of a Binary Tree",
+        "6. Level Order Successor",
+    ],
+    "Tree Depth First Search": [
+        "1. Binary Tree Path Sum",
+        "2. All Paths for a Sum",
+        "3. Sum of Path Numbers",
+        "4. Path With Given Sequence",
+        "5. Count Paths for a Sum",
+    ],
+    "Knapsack": [
+        "1. 0/1 Knapsack",
+        "2. Equal Subset Sum Partition",
+    ],
 }
 
 

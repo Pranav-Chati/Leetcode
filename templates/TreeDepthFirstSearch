@@ -16,4 +16,28 @@ public class TreeDepthFirstSearch {
      * that the sum of all the node values of each path equals ‘S’.
      */
     public static int allPathsSum(TreeNode root, int sum) {}
+
+    /*
+     * Problem: Sum of Path Numbers
+     * Given a binary tree where each node can only have a digit (0-9) value, each
+     * root-to-leaf path will represent a number. Find the total sum of all the
+     * numbers represented by all paths.
+     */
+    public static int sumOfPathNumbers(TreeNode root) {}
+
+    /*
+     * problem: Path With Given Sequence
+     * Given a binary tree and a number sequence, find if the sequence is present as
+     * a root-to-leaf path in the given tree.
+     */
+    public static boolean pathWithGivenSequence(TreeNode root, int[] sequence) {}
+
+    /*
+     * problem: Count Paths for a Sum
+     * Given a binary tree and a number ‘S’, find all paths in the tree such that
+     * the sum of all the node values of each path equals ‘S’. Please note that the
+     * paths can start or end at any node but all paths must follow direction from
+     * parent to child (top to bottom).
+     */
+    public static int countPathsForSum(TreeNode root, int S) {}
 }

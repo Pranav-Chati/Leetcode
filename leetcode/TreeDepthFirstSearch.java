@@ -2,6 +2,7 @@ package leetcode;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 
 import helper.TreeNode;
 
@@ -38,14 +39,119 @@ public class TreeDepthFirstSearch {
         if (root == null)
             return;
 
+        current.add(root.val);
         if (root.val == sum && root.left == null && root.right == null) {
-            allPaths.add(current);
+            allPaths.add(new ArrayList<Integer>(current));
         } else {
             allPathRecursive(root.left, sum - root.val, allPaths, current);
             allPathRecursive(root.right, sum - root.val, allPaths, current);
         }
 
         current.remove(current.size() - 1);
-        return;
     }
+
+    /*
+     * Problem: Sum of Path Numbers
+     * Given a binary tree where each node can only have a digit (0-9) value, each
+     * root-to-leaf path will represent a number. Find the total sum of all the
+     * numbers represented by all paths.
+     */
+    public static int sumOfPathNumbers(TreeNode root) {
+        int numbers = 0;
+        int sum = 0;
+        return sumOfPathNumbersRecursive(root, numbers, sum);
+    }
+
+    public static int sumOfPathNumbersRecursive(TreeNode currentNode, int number, int sum) {
+        if (currentNode == null)
+            return 0;
+
+        number = 10 * number + currentNode.val;
+        if (currentNode.left == null && currentNode.right == null)
+            return number;
+
+        return sumOfPathNumbersRecursive(currentNode.left, number, sum)
+                + sumOfPathNumbersRecursive(currentNode.right, number, sum);
+
+    }
+
+    /*
+     * problem: Path With Given Sequence
+     * Given a binary tree and a number sequence, find if the sequence is present as
+     * a root-to-leaf path in the given tree.
+     */
+    public static boolean pathWithGivenSequence(TreeNode root, int[] sequence) {
+        return pathWithGivenSequenceRecursive(root, sequence, 0);
+    }
+
+    public static boolean pathWithGivenSequenceRecursive(TreeNode root, int[] sequence, int index) {
+        if (root == null)
+            return false;
+
+        if (index >= sequence.length || root.val != sequence[index])
+            return false;
+
+        if (root.left == null && root.right == null && index == sequence.length - 1)
+            return true;
+
+        return pathWithGivenSequenceRecursive(root.left, sequence, index + 1)
+                || pathWithGivenSequenceRecursive(root.right, sequence, index + 1);
+    }
+
+    /*
+     * problem: Count Paths for a Sum
+     * Given a binary tree and a number ‘S’, find all paths in the tree such that
+     * the sum of all the node values of each path equals ‘S’. Please note that the
+     * paths can start or end at any node but all paths must follow direction from
+     * parent to child (top to bottom).
+     */
+    public static int countPathsForSum(TreeNode root, int S) {
+        // List<List<Integer>> allPaths = new ArrayList<>();
+        List<Integer> currentPath = new ArrayList<>();
+        // countPathForSumRecursive(root, S, allPaths, currentPath);
+        return countPathForSumRecursive2(root, S, currentPath);
+
+        // return allPaths.size();
+    }
+
+    public static void countPathForSumRecursive(TreeNode current, int sum, List<List<Integer>> allPaths,
+            List<Integer> currentPath) {
+        if (current == null)
+            return;
+
+        currentPath.add(current.val);
+        if (current.val == sum) { // no longer has to be a leaf
+            allPaths.add(new ArrayList<>(currentPath));
+        } else {
+            countPathForSumRecursive(current.left, sum, allPaths, new ArrayList<>());
+            countPathForSumRecursive(current.right, sum, allPaths, new ArrayList<>());
+            countPathForSumRecursive(current.left, sum - current.val, allPaths, currentPath);
+            countPathForSumRecursive(current.right, sum - current.val, allPaths, currentPath);
+        }
+
+        currentPath.remove(currentPath.size() - 1);
+    }
+
+    public static int countPathForSumRecursive2(TreeNode current, int sum, List<Integer> currentPath) {
+        if (current == null)
+            return 0;
+
+        currentPath.add(current.val);
+        int pathCount = 0;
+        int pathSum = 0;
+        ListIterator<Integer> previousNodes = currentPath.listIterator(currentPath.size());
+        while (previousNodes.hasPrevious()) {
+            pathSum += previousNodes.previous();
+            if (pathSum == sum) {
+                pathCount++;
+            }
+        }
+
+        pathCount += countPathForSumRecursive2(current.left, sum, currentPath);
+        pathCount += countPathForSumRecursive2(current.right, sum, currentPath);
+
+        currentPath.remove(currentPath.size() - 1);
+        return pathCount;
+    }
+
 }
