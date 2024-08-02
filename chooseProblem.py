@@ -55,6 +55,9 @@ problems = {
         "4. Level Averages in a Binary Tree",
         "5. Minimum Depth of a Binary Tree",
         "6. Level Order Successor",
+        "7. Connect Level Order Siblings",
+        "8. Problem Challenge 1 - Connect All Level Order Siblings",
+        "9. Problem Challenge 2 - Right View of a Binary Tree",
     ],
     "Tree Depth First Search": [
         "1. Binary Tree Path Sum",
@@ -62,10 +65,16 @@ problems = {
         "3. Sum of Path Numbers",
         "4. Path With Given Sequence",
         "5. Count Paths for a Sum",
+        "6. Problem Challenge 1 - Tree Diameter",
+        "7. Problem Challenge 2 - Path with Maximum Sum",
+    ],
+    "Modified Binary Search": [
+        "1. Order-agnostic Binary Search",
     ],
     "Knapsack": [
         "1. 0/1 Knapsack",
         "2. Equal Subset Sum Partition",
+        "3. Subset Sum",
     ],
 }
 

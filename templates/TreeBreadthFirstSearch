@@ -46,4 +46,26 @@ public class TreeBreadthFirstSearch {
      * after the given node in the level order traversal.
      */
     public static TreeNode findLevelOrderSuccessor(TreeNode root, int key) {}
+
+    /*
+     * problem: Connect Level Order Siblings
+     * Given a binary tree, connect each node with its level order successor. The
+     * last node of each level should point to a null node.
+     */
+    public static void connectLevelOrderSiblings(TreeNode1 root) {}
+
+    /*
+     * problem: Connect All Level Order Siblings:
+     * Given a binary tree, connect each node with its level order successor. The
+     * last node of each level should point to the first node of the next level.
+     */
+    public static void connectAllLevelOrderSiblings(TreeNode1 root) {}
+
+    /*
+     * problem: Right View of a Binary Tree
+     * Given a binary tree, return an array containing nodes in its right view. The
+     * right view of a binary tree is the set of nodes visible when the tree is seen
+     * from the right side.
+     */
+    public static List<TreeNode> rightViewOfBinaryTree(TreeNode root) {}
 }

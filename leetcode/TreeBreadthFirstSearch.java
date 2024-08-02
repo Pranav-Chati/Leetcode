@@ -193,4 +193,131 @@ public class TreeBreadthFirstSearch {
 
         return bfs.peek();
     }
+
+    /*
+     * problem: Connect Level Order Siblings
+     * Given a binary tree, connect each node with its level order successor. The
+     * last node of each level should point to a null node.
+     */
+    public static void connectLevelOrderSiblings(TreeNode1 root) {
+        Queue<TreeNode1> bfs = new LinkedList<>();
+        bfs.offer(root);
+
+        while (!bfs.isEmpty()) {
+            int sizeOfLevel = bfs.size();
+            TreeNode1 previousNode = null;
+
+            for (int i = 0; i < sizeOfLevel; i++) {
+                TreeNode1 currentNode = bfs.poll();
+
+                if (previousNode != null)
+                    previousNode.next = currentNode;
+                previousNode = currentNode;
+
+                if (currentNode.left != null)
+                    bfs.offer(currentNode.left);
+
+                if (currentNode.right != null)
+                    bfs.offer(currentNode.right);
+            }
+        }
+    }
+
+    public static void connectLevelOrderSiblingsAlt(TreeNode1 root) {
+        Queue<TreeNode1> bfs = new LinkedList<>();
+        bfs.add(root);
+
+        while (!bfs.isEmpty()) {
+            int sizeOfLevel = bfs.size();
+
+            for (int i = 0; i < sizeOfLevel; i++) {
+                TreeNode1 currentNode = bfs.poll();
+                if (i + 1 < sizeOfLevel) {
+                    currentNode.next = bfs.peek();
+                }
+
+                if (currentNode.left != null)
+                    bfs.offer(currentNode.left);
+                if (currentNode.right != null)
+                    bfs.offer(currentNode.right);
+            }
+        }
+    }
+
+    /*
+     * problem: Connect All Level Order Siblings:
+     * Given a binary tree, connect each node with its level order successor. The
+     * last node of each level should point to the first node of the next level.
+     */
+    public static void connectAllLevelOrderSiblings(TreeNode1 root) {
+        Queue<TreeNode1> bfs = new LinkedList<>();
+        bfs.add(root);
+        TreeNode1 currentNode = null;
+        TreeNode1 previousNode = null;
+
+        while (!bfs.isEmpty()) {
+            currentNode = bfs.poll();
+            if (previousNode != null)
+                previousNode.next = currentNode;
+            previousNode = currentNode;
+
+            if (currentNode.left != null)
+                bfs.offer(currentNode.left);
+            if (currentNode.right != null)
+                bfs.offer(currentNode.right);
+        }
+    }
+
+    // with the alternative approach, our time complexity increases.
+    public static void connectAllLevelOrderSiblingsAlt(TreeNode1 root) {
+        Queue<TreeNode1> bfs = new LinkedList<>();
+        bfs.add(root);
+
+        while (!bfs.isEmpty()) {
+            int size = bfs.size();
+
+            for (int i = 0; i < size; i++) {
+                TreeNode1 currentNode = bfs.poll();
+
+                if (currentNode.left != null)
+                    bfs.offer(currentNode.left);
+                if (currentNode.right != null)
+                    bfs.offer(currentNode.right);
+
+                if (bfs.peek() != null)
+                    currentNode.next = bfs.peek();
+            }
+        }
+    }
+
+    /*
+     * problem: Right View of a Binary Tree
+     * Given a binary tree, return an array containing nodes in its right view. The
+     * right view of a binary tree is the set of nodes visible when the tree is seen
+     * from the right side.
+     */
+    public static List<TreeNode> rightViewOfBinaryTree(TreeNode root) {
+        List<TreeNode> rightSide = new ArrayList<>();
+        Queue<TreeNode> bfs = new LinkedList<>();
+        bfs.offer(root);
+
+        while (!bfs.isEmpty()) {
+            int sizeOfLevel = bfs.size();
+            for (int i = 0; i < sizeOfLevel; i++) {
+                TreeNode currentNode = bfs.poll();
+
+                if (i + 1 == sizeOfLevel)
+                    rightSide.add(currentNode);
+
+                if (currentNode.left != null)
+                    bfs.offer(currentNode.left);
+
+                if (currentNode.right != null)
+                    bfs.offer(currentNode.right);
+            }
+        }
+
+        return rightSide;
+    }
+
 }

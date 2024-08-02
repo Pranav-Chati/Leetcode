@@ -40,4 +40,23 @@ public class TreeDepthFirstSearch {
      * parent to child (top to bottom).
      */
     public static int countPathsForSum(TreeNode root, int S) {}
+
+    /*
+     * problem: Tree Diameter
+     * Given a binary tree, find the length of its diameter. The diameter of a tree
+     * is the number of nodes on the longest path between any two leaf nodes. The
+     * diameter of a tree may or may not pass through the root.
+     * 
+     * Note: You can always assume that there are at least two leaf nodes in the
+     * given tree.
+     */
+    public static int findDiameter(TreeNode root) {}
+
+    /*
+     * problem: Path with Maximum Sum
+     * Find the path with the maximum sum in a given binary tree. Write a function
+     * that returns the maximum sum. A path can be defined as a sequence of nodes
+     * between any two nodes and doesn’t necessarily pass through the root.
+     */
+    public static int pathWithMaxSum(TreeNode root) {}
 }

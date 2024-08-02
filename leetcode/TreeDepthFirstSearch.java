@@ -154,4 +154,60 @@ public class TreeDepthFirstSearch {
         return pathCount;
     }
 
+    /*
+     * problem: Tree Diameter
+     * Given a binary tree, find the length of its diameter. The diameter of a tree
+     * is the number of nodes on the longest path between any two leaf nodes. The
+     * diameter of a tree may or may not pass through the root.
+     * 
+     * Note: You can always assume that there are at least two leaf nodes in the
+     * given tree.
+     */
+    public static int maxDiameter = 0;
+
+    public static int findDiameter(TreeNode root) {
+        findDiameterRecursive(root);
+        return maxDiameter;
+    }
+
+    // this just finds the total number of nodes
+    public static int findDiameterRecursive(TreeNode root) {
+        if (root == null)
+            return 0;
+
+        int leftDiameter = findDiameterRecursive(root.left);
+        int rightDiameter = findDiameterRecursive(root.right);
+
+        int diameter = leftDiameter + rightDiameter + 1;
+        maxDiameter = Math.max(maxDiameter, diameter);
+
+        return Math.max(leftDiameter, rightDiameter) + 1;
+    }
+
+    /*
+     * problem: Path with Maximum Sum
+     * Find the path with the maximum sum in a given binary tree. Write a function
+     * that returns the maximum sum. A path can be defined as a sequence of nodes
+     * between any two nodes and doesn’t necessarily pass through the root.
+     */
+    public static int maxSum = Integer.MIN_VALUE;
+
+    public static int pathWithMaxSum(TreeNode root) {
+        pathWithMaxSumRecursive(root);
+        return maxSum;
+    }
+
+    public static int pathWithMaxSumRecursive(TreeNode currentNode) {
+        if (currentNode == null)
+            return 0;
+
+        int leftSum = Math.max(pathWithMaxSumRecursive(currentNode.left), 0);
+        int rightSum = Math.max(pathWithMaxSumRecursive(currentNode.right), 0);
+
+        int sum = leftSum + rightSum + currentNode.val;
+
+        maxSum = Math.max(maxSum, sum);
+
+        return Math.max(leftSum, rightSum) + currentNode.val;
+    }
 }

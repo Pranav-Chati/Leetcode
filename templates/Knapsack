@@ -14,4 +14,12 @@ public class Knapsack {
      * such that the sum of elements in both subsets is equal.
      */
     public static boolean equalSubsetSumPartition(int[] nums) {}
+
+
+    /*
+     * problem: Subset Sum
+     * Given a set of positive numbers, determine if a subset exists whose sum is
+     * equal to a given number ‘S’.
+     */
+    public static boolean subsetSum(int[] nums, int sum) {}
 }

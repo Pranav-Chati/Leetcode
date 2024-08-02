@@ -2,6 +2,22 @@
 
 Contains date and what problems were solved
 
+### Thursday, August 1st
+
+Problem:
+
+1. Connect Level Order Siblings (Category: Tree Breadth First Search)
+2. Problem Challenge 1 - Connect All Level Order Siblings (Category: Tree Breadth First Search)
+3. 0/1 Knapsack (Category: 0 or 1 Knapsack (DP))
+4. Equal Subset Sum Partition (Category: 0 or 1 Knapsack (DP))
+5. Problem Challenge 2 - Right View of a Binary Tree (Category: Tree Breadth First Search)
+6. Order-agnostic Binary Search (Category: Modified Binary Search)
+7. Subset Sum (Category: 0 or 1 Knapsack (DP))
+8. Problem Challenge 1 (Category: Tree Depth First Search)
+9. Problem Challenge 2 (Category: Tree Depth First Search)
+
+---
+
 ### Wednesday, July 31st
 
 Problem:
